@@ -1,13 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://crri06jkingmg"]
+[gd_scene load_steps=10 format=3 uid="uid://crri06jkingmg"]
 
 [ext_resource type="Script" path="res://scripts/gravity_sphere.gd" id="1_hb6wg"]
 [ext_resource type="PackedScene" uid="uid://bkb08kejt34ex" path="res://Explosion.tscn" id="2_jevxy"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_423on"]
-albedo_color = Color(1, 0.266667, 0, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6nhk"]
+albedo_color = Color(1, 0.233333, 0, 1)
 
-[sub_resource type="SphereMesh" id="SphereMesh_x4i8p"]
-material = SubResource("StandardMaterial3D_423on")
+[sub_resource type="SphereMesh" id="SphereMesh_2taig"]
+material = SubResource("StandardMaterial3D_w6nhk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvnv0"]
+albedo_color = Color(0, 0.383333, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_x0auw"]
+material = SubResource("StandardMaterial3D_kvnv0")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8uugd"]
 
@@ -31,7 +37,12 @@ script = ExtResource("1_hb6wg")
 
 [node name="Sphere" type="MeshInstance3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
-mesh = SubResource("SphereMesh_x4i8p")
+mesh = SubResource("SphereMesh_2taig")
+
+[node name="BlueSphere" type="MeshInstance3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+visible = false
+mesh = SubResource("SphereMesh_x0auw")
 
 [node name="Hitbox" type="CollisionShape3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)

@@ -1,12 +1,19 @@
 extends StaticBody3D
 @onready var player: CharacterBody3D = $"../Player"
 @onready var explosion: Node3D = $Explosion
+@onready var blue_sphere: MeshInstance3D = $BlueSphere
+@onready var sphere: MeshInstance3D = $Sphere
 
 enum {METEOR, PLANET, BLACK_HOLE}
 
 @export var IS_DANGER = true
 @export var OBJECT_TYPE = PLANET
 @export var GRAVITY_FORCE = 10
+
+func _ready():
+	if IS_DANGER != true:
+		blue_sphere.visible = true
+		sphere.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -30,6 +37,7 @@ func _physics_process(delta: float) -> void:
 func explode():
 	# spawn explosion effect
 	explosion.explode()
-	$Sphere.visible = false
+	sphere.visible = false
+	blue_sphere.visible = false
 	await get_tree().create_timer(2.0).timeout
 	queue_free()
