@@ -54,6 +54,9 @@ func _physics_process(delta: float) -> void:
 				print("I collided with ", collision.get_collider().IS_DANGER)
 				if collision.get_collider().IS_DANGER: 
 					die()
+				else:
+					collision.get_collider().explode()
+					die()
 
 	else:
 		velocity = Vector3(0,0,0)

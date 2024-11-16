@@ -1,5 +1,6 @@
 extends StaticBody3D
 @onready var player: CharacterBody3D = $"../Player"
+@onready var explosion: Node3D = $Explosion
 
 enum {METEOR, PLANET, BLACK_HOLE}
 
@@ -25,3 +26,10 @@ func _physics_process(delta: float) -> void:
 		var astroidGravity = GRAVITY_FORCE * astroidDirection.normalized() * mass / (astroidDistance * astroidDistance)
 		
 		astroid.velocity -= astroidGravity
+
+func explode():
+	# spawn explosion effect
+	explosion.explode()
+	$Sphere.visible = false
+	await get_tree().create_timer(2.0).timeout
+	queue_free()

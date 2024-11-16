@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://crri06jkingmg"]
+[gd_scene load_steps=8 format=3 uid="uid://crri06jkingmg"]
 
 [ext_resource type="Script" path="res://scripts/gravity_sphere.gd" id="1_hb6wg"]
+[ext_resource type="PackedScene" uid="uid://bkb08kejt34ex" path="res://Explosion.tscn" id="2_jevxy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_423on"]
 albedo_color = Color(1, 0.266667, 0, 1)
@@ -39,3 +40,5 @@ shape = SubResource("SphereShape3D_8uugd")
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, -1.74846e-07, -4, 0, 4, -1.74846e-07, 0, 0, 0)
 texture = SubResource("GradientTexture2D_ua1kr")
+
+[node name="Explosion" parent="." instance=ExtResource("2_jevxy")]
