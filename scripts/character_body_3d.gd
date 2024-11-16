@@ -75,8 +75,7 @@ func die():
 	left_air_thruster.disable_airthruster()
 	PlayerExplosionAudio.play()
 	explosion.explode()
-	await get_tree().create_timer(2.0).timeout
-	get_tree().reload_current_scene()
+
 
 # BASIC MOVEMENT
 #func _physics_process(delta: float) -> void:
