@@ -92,6 +92,16 @@ curve = SubResource("Curve3D_wlkgi")
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
 transform = Transform3D(-0.999895, -1.15527e-05, 0.0145107, 0, 1, 0.000796147, -0.0145108, 0.000796064, -0.999894, -141.421, 0.165741, -208.995)
 
+[node name="Button" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -86.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "Restart (r)"
+script = ExtResource("5_vxv1v")
+
 [node name="WinLoseUI" type="CenterContainer" parent="."]
 visible = false
 anchors_preset = 15
