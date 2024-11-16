@@ -6,23 +6,19 @@ extends CharacterBody3D
 @onready var explosion: Node3D = $Explosion
 @onready var explosionAudio: AudioStreamPlayer = $AsteroidExplosion
 
-var is_dead: bool = false
-
-func _ready() -> void:
-	var playerPosition = player.position
-	velocity = (playerPosition - position).normalized() * randf() * 100
-	velocity = velocity.rotated(Vector3.UP, randf())
+func initialize(start_position, player_position):
+	look_at_from_position(start_position, player_position, Vector3.UP)
+	rotate_y(randf_range(-PI / 4, PI / 4))
+	var random_speed = randi_range(0, 100)
+	velocity = Vector3.FORWARD * random_speed
+	velocity = velocity.rotated(Vector3.UP, rotation.y)
 
 func _physics_process(delta: float) -> void:
-	for index in range(get_slide_collision_count()):
-		var collision = get_slide_collision(index)
-		if collision.get_collider() and !is_dead:
-			is_dead = true
-			if !explosionAudio.playing:
-				explosionAudio.play()
-			explosion.explode()
-			astroidMesh.hide()
-			await get_tree().create_timer(2.0).timeout
-			queue_free()
-			break
-	move_and_slide()
+	var collision = move_and_collide(velocity * delta)
+	if collision:
+		if !explosionAudio.playing:
+			explosionAudio.play()
+		explosion.explode()
+		astroidMesh.hide()
+		await get_tree().create_timer(2.0).timeout
+		queue_free()
