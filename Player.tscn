@@ -52,7 +52,7 @@ stream = ExtResource("5_7i0lw")
 volume_db = -30.0
 
 [node name="LeftAirThruster" parent="." instance=ExtResource("6_cdtl7")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.01, 0, -0.902)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.1, 0, -0.902)
 
 [node name="RightAirThruster" parent="." instance=ExtResource("6_cdtl7")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.1, 0, -0.902)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.1, 0, -0.902)

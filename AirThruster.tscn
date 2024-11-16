@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://air_thruster.gd" id="1_bkimk"]
 
 [sub_resource type="Curve" id="Curve_hpuxp"]
-_data = [Vector2(0, 0.00967348), 0.0, 0.0, 0, 0, Vector2(0.327217, 1), 0.0, 0.0, 0, 0, Vector2(0.752294, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.00967348), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.00967348), 0.0, 0.0, 0, 0, Vector2(0.146789, 1), 0.0, 0.0, 0, 0, Vector2(0.752294, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.00967348), 0.0, 0.0, 0, 0]
 point_count = 4
 
 [sub_resource type="CurveTexture" id="CurveTexture_i3flc"]
@@ -33,7 +33,7 @@ script = ExtResource("1_bkimk")
 
 [node name="Air" type="GPUParticles3D" parent="."]
 amount = 24
-lifetime = 0.1
+lifetime = 0.05
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_2y5wj")
 draw_pass_1 = SubResource("SphereMesh_6p2m2")
