@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://sgkqe5oajc3t"]
+[gd_scene load_steps=8 format=3 uid="uid://dgjsyn8cdn0b"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_losu8"]
 [ext_resource type="Texture2D" uid="uid://dnnfthah2vpv7" path="res://assets/star.png" id="2_edjj6"]
@@ -90,6 +90,41 @@ text = "Credits"
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Quit"
+
+[node name="CreditKyrill" type="Label" parent="."]
+offset_left = 193.0
+offset_top = 115.0
+offset_right = 280.0
+offset_bottom = 164.0
+theme_override_font_sizes/font_size = 32
+text = "Kyrill"
+
+[node name="CreditMads" type="Label" parent="."]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 479.0
+offset_right = 295.0
+offset_bottom = 528.0
+theme_override_font_sizes/font_size = 32
+text = "Mads"
+
+[node name="CreditMartin" type="Label" parent="."]
+layout_mode = 0
+offset_left = 868.0
+offset_top = 483.0
+offset_right = 972.0
+offset_bottom = 532.0
+theme_override_font_sizes/font_size = 32
+text = "Martin"
+
+[node name="CreditMarkus" type="Label" parent="."]
+layout_mode = 0
+offset_left = 858.0
+offset_top = 110.0
+offset_right = 974.0
+offset_bottom = 159.0
+theme_override_font_sizes/font_size = 32
+text = "Markus"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
