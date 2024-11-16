@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://1o0bl85sxq4k"]
+
+[ext_resource type="Script" path="res://air_thruster.gd" id="1_bkimk"]
+
+[sub_resource type="Curve" id="Curve_hpuxp"]
+_data = [Vector2(0, 0.00967348), 0.0, 0.0, 0, 0, Vector2(0.327217, 1), 0.0, 0.0, 0, 0, Vector2(0.752294, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.00967348), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_i3flc"]
+curve = SubResource("Curve_hpuxp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2y5wj"]
+direction = Vector3(0, 0, 1)
+spread = 1.0
+flatness = 1.0
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_i3flc")
+color = Color(0.57, 0.55974, 0.5187, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7bn4"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_6p2m2"]
+material = SubResource("StandardMaterial3D_w7bn4")
+radial_segments = 8
+rings = 4
+
+[node name="AirThruster" type="Node3D"]
+script = ExtResource("1_bkimk")
+
+[node name="Air" type="GPUParticles3D" parent="."]
+amount = 24
+lifetime = 0.1
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_2y5wj")
+draw_pass_1 = SubResource("SphereMesh_6p2m2")

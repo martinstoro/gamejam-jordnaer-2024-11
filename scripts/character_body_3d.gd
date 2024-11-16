@@ -1,6 +1,9 @@
 extends CharacterBody3D
 @onready var thruster: Node3D = $Thruster
 @onready var explosion: Node3D = $Explosion
+@onready var left_air_thruster: Node3D = $LeftAirThruster
+@onready var right_air_thruster: Node3D = $RightAirThruster
+
 @onready var ship_mesh: Node3D = $ShipMesh
 @onready var MainBoosterAudio: AudioStreamPlayer = $MainBooster
 @onready var RotationBoosterAudio: AudioStreamPlayer = $RotationBooster
@@ -12,6 +15,8 @@ var is_alive = true
 
 func _ready() -> void:
 	thruster.disable_thrusters()
+	left_air_thruster.disable_airthruster()
+	right_air_thruster.disable_airthruster()
 
 func _physics_process(delta: float) -> void:
 	if is_alive:
@@ -25,18 +30,22 @@ func _physics_process(delta: float) -> void:
 			MainBoosterAudio.stop()
 
 		if Input.is_action_pressed("ui_left"):
+			right_air_thruster.enable_airthruster()
 			rotation.y += ROTATE_ANGLE * delta
 			if !RotationBoosterAudio.playing:
 				RotationBoosterAudio.play()
 		if Input.is_action_just_released("ui_left"):
 			RotationBoosterAudio.stop()
+			right_air_thruster.disable_airthruster()
 
 		if Input.is_action_pressed("ui_right"):
+			left_air_thruster.enable_airthruster()
 			rotation.y -= ROTATE_ANGLE * delta
 			if !RotationBoosterAudio.playing:
 				RotationBoosterAudio.play()
 		if Input.is_action_just_released("ui_right"):
 			RotationBoosterAudio.stop()
+			left_air_thruster.disable_airthruster()
 	else:
 		velocity = Vector3(0,0,0)
 	
@@ -56,6 +65,11 @@ func die():
 	is_alive = false
 	ship_mesh.visible = false
 	thruster.disable_thrusters()
+	MainBoosterAudio.stop()
+	RotationBoosterAudio.stop()
+	right_air_thruster.disable_airthruster()
+	RotationBoosterAudio.stop()
+	left_air_thruster.disable_airthruster()
 	explosion.explode()
 	await get_tree().create_timer(2.0).timeout
 	get_tree().reload_current_scene()
