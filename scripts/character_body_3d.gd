@@ -40,11 +40,12 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = Vector3(0,0,0)
 	
-	var collision = move_and_collide(velocity * delta)
-	if collision:
-		print("I collided with ", collision.get_collider().IS_DANGER)
-		if collision.get_collider().IS_DANGER: 
-			die()
+	for index in range(get_slide_collision_count()):
+		var collision = get_slide_collision(index)
+		if collision.get_collider():
+			print("I collided with ", collision.get_collider().IS_DANGER)
+			if collision.get_collider().IS_DANGER: 
+				die()
 	
 	if Input.is_key_pressed(KEY_R): 
 		get_tree().reload_current_scene()
