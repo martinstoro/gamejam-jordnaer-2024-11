@@ -2,24 +2,41 @@ extends CharacterBody3D
 @onready var thruster: Node3D = $Thruster
 @onready var explosion: Node3D = $Explosion
 @onready var ship_mesh: Node3D = $ShipMesh
-
+@onready var MainBoosterAudio: AudioStreamPlayer = $MainBooster
+@onready var RotationBoosterAudio: AudioStreamPlayer = $RotationBooster
 
 const MASS = 1.0
 const ACCELLERATE_VEC = Vector3(0, 0, -20)
 const ROTATE_ANGLE = 6
 var is_alive = true
 
+func _ready() -> void:
+	thruster.disable_thrusters()
+
 func _physics_process(delta: float) -> void:
 	if is_alive:
 		if Input.is_action_pressed("ui_up"):
 			velocity += ACCELLERATE_VEC.rotated(Vector3.UP, rotation.y) * delta
 			thruster.enable_thrusters()
-		else:
+			if !MainBoosterAudio.playing:
+				MainBoosterAudio.play()
+		if Input.is_action_just_released("ui_up"):
 			thruster.disable_thrusters()
+			MainBoosterAudio.stop()
+
 		if Input.is_action_pressed("ui_left"):
 			rotation.y += ROTATE_ANGLE * delta
+			if !RotationBoosterAudio.playing:
+				RotationBoosterAudio.play()
+		if Input.is_action_just_released("ui_left"):
+			RotationBoosterAudio.stop()
+
 		if Input.is_action_pressed("ui_right"):
 			rotation.y -= ROTATE_ANGLE * delta
+			if !RotationBoosterAudio.playing:
+				RotationBoosterAudio.play()
+		if Input.is_action_just_released("ui_right"):
+			RotationBoosterAudio.stop()
 	else:
 		velocity = Vector3(0,0,0)
 	
