@@ -20,21 +20,9 @@ func _on_back_pressed() -> void:
 	start_menu()
 
 func start_menu() -> void:
-	$MarginContainer/VBoxContainer/Start.show()
-	$MarginContainer/VBoxContainer/Credits.show()
-	$MarginContainer/VBoxContainer/Quit.show()
-	$MarginContainer/VBoxContainer/Back.hide()
-	$CreditKyrill.hide()
-	$CreditMads.hide()
-	$CreditMartin.hide()
-	$CreditMarkus.hide()
+	$StartMenu.show()
+	$CreditsMenu.hide()
 	
 func credits_show() -> void:
-	$MarginContainer/VBoxContainer/Start.hide()
-	$MarginContainer/VBoxContainer/Credits.hide()
-	$MarginContainer/VBoxContainer/Quit.hide()
-	$MarginContainer/VBoxContainer/Back.show()
-	$CreditKyrill.show()
-	$CreditMads.show()
-	$CreditMartin.show()
-	$CreditMarkus.show()
+	$StartMenu.hide()
+	$CreditsMenu.show()
