@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://cdn74qbbrbofh"]
+[gd_scene load_steps=11 format=3 uid="uid://dfjtwvw3b8x8s"]
 
 [ext_resource type="PackedScene" uid="uid://ca7vc7rpbqikh" path="res://Player.tscn" id="1_ifff7"]
-[ext_resource type="PackedScene" uid="uid://clraxyup2ymdv" path="res://Planet.tscn" id="2_q31yk"]
+[ext_resource type="PackedScene" uid="uid://crri06jkingmg" path="res://Planet.tscn" id="2_q31yk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kg8q8"]
 
@@ -46,6 +46,7 @@ transform = Transform3D(0.182468, -0.636054, 0.74976, 0.976876, 0.0308468, -0.21
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_ifff7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.9651, 0, -158.239)
 
 [node name="Planet" parent="." instance=ExtResource("2_q31yk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
