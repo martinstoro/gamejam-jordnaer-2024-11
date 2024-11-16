@@ -10,12 +10,11 @@ func _on_quit_pressed() -> void:
 	get_tree().quit()
 
 func _on_credits_pressed() -> void:
-	pass
+		credits_show()
 
 func _process(delta):
 	if Input.is_key_pressed(KEY_R): 
 		get_tree().change_scene_to_file("res://Main3D.tscn")
-	credits_show()
 
 func _on_back_pressed() -> void:
 	start_menu()
