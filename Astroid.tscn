@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvh1maum3hk8"]
+[gd_scene load_steps=8 format=3 uid="uid://cvh1maum3hk8"]
 
 [ext_resource type="Script" path="res://scripts/astroid.gd" id="1_hfft7"]
+[ext_resource type="PackedScene" path="res://Explosion.tscn" id="2_1dh4u"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_52vss"]
 frequency = 0.0196
@@ -40,3 +41,5 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 shape = SubResource("SphereShape3D_64ksf")
+
+[node name="Explosion" parent="." instance=ExtResource("2_1dh4u")]

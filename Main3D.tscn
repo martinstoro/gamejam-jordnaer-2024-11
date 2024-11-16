@@ -66,26 +66,26 @@ IS_DANGER = false
 transform = Transform3D(10000, 0, 0, 0, 10000, 0, 0, 0, 10000, 0.755829, -9.99919, -0.0176315)
 mesh = SubResource("PlaneMesh_0ilb1")
 
-[node name="Astroid" parent="." instance=ExtResource("3_0wttf")]
+[node name="Astroid" parent="." groups=["astroid"] instance=ExtResource("3_0wttf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114.667, 1.90735e-06, 40.9341)
 
-[node name="Astroid2" parent="." instance=ExtResource("3_0wttf")]
+[node name="Astroid2" parent="." groups=["astroid"] instance=ExtResource("3_0wttf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 362.07, 1.90735e-06, -99.8232)
 
-[node name="Astroid3" parent="." instance=ExtResource("3_0wttf")]
+[node name="Astroid3" parent="." groups=["astroid"] instance=ExtResource("3_0wttf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 373.532, 1.90735e-06, 39.1992)
 
-[node name="Astroid4" parent="." instance=ExtResource("3_0wttf")]
+[node name="Astroid4" parent="." groups=["astroid"] instance=ExtResource("3_0wttf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -263.335, 1.90735e-06, -240.738)
 
-[node name="Astroid5" parent="." instance=ExtResource("3_0wttf")]
+[node name="Astroid5" parent="." groups=["astroid"] instance=ExtResource("3_0wttf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.5369, 1.90735e-06, -258.097)
 
-[node name="Astroid6" parent="." instance=ExtResource("3_0wttf")]
+[node name="Astroid6" parent="." groups=["astroid"] instance=ExtResource("3_0wttf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 240.814, 1.90735e-06, -263.139)
 
-[node name="Astroid7" parent="." instance=ExtResource("3_0wttf")]
+[node name="Astroid7" parent="." groups=["astroid"] instance=ExtResource("3_0wttf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 368.932, 1.90735e-06, -196.2)
 
-[node name="Astroid8" parent="." instance=ExtResource("3_0wttf")]
+[node name="Astroid8" parent="." groups=["astroid"] instance=ExtResource("3_0wttf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.9997, 1.90735e-06, -21.3054)
