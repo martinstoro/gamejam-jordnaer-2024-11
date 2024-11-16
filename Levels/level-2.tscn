@@ -46,12 +46,16 @@ transform = Transform3D(0.182468, -0.636054, 0.74976, 0.976876, 0.0308468, -0.21
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_qb8a5")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -29.9848, 0, -66.7023)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -70.2318, 0, -66.7023)
 
 [node name="Planet" parent="." instance=ExtResource("2_mbqbv")]
-transform = Transform3D(16.58, 0, 0, 0, 16.58, 0, 0, 0, 16.58, 194.095, -0.0111542, -63.7739)
+transform = Transform3D(16.58, 0, 0, 0, 16.58, 0, 0, 0, 16.58, 199.628, -0.0343476, -34.5109)
 IS_DANGER = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(10000, 0, 0, 0, 10000, 0, 0, 0, 10000, 0, -10, 0)
 mesh = SubResource("PlaneMesh_0ilb1")
+
+[node name="Planet2" parent="." instance=ExtResource("2_mbqbv")]
+transform = Transform3D(16.58, 0, 0, 0, 16.58, 0, 0, 0, 16.58, 57.7796, -0.0111542, -64.8525)
+IS_DANGER = false

@@ -17,22 +17,24 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	var mass = scale * scale 
-	
-	var playerPosition = player.position
-	var playerDirection = playerPosition - position
-	var playerDistance = playerDirection.length()
-	var playerGravity = GRAVITY_FORCE * playerDirection.normalized() * mass / (playerDistance * playerDistance)
-	player.velocity -= playerGravity
-	
-	var astroids = get_tree().get_nodes_in_group("astroids")
-	for astroid in astroids:
-		var astroidPosition = astroid.position
-		var astroidDirection = astroidPosition - position
-		var astroidDistance = astroidDirection.length()
-		var astroidGravity = GRAVITY_FORCE * astroidDirection.normalized() * mass / (astroidDistance * astroidDistance)
+	if player.LET_GO: 
 		
-		astroid.velocity -= astroidGravity
+		var mass = scale * scale 
+		
+		var playerPosition = player.position
+		var playerDirection = playerPosition - position
+		var playerDistance = playerDirection.length()
+		var playerGravity = GRAVITY_FORCE * playerDirection.normalized() * mass / (playerDistance * playerDistance)
+		player.velocity -= playerGravity
+		
+		var astroids = get_tree().get_nodes_in_group("astroids")
+		for astroid in astroids:
+			var astroidPosition = astroid.position
+			var astroidDirection = astroidPosition - position
+			var astroidDistance = astroidDirection.length()
+			var astroidGravity = GRAVITY_FORCE * astroidDirection.normalized() * mass / (astroidDistance * astroidDistance)
+			
+			astroid.velocity -= astroidGravity
 
 func explode():
 	# spawn explosion effect

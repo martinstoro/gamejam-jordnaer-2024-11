@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ca7vc7rpbqikh"]
+[gd_scene load_steps=12 format=3 uid="uid://6htt2762mvu5"]
 
 [ext_resource type="Script" path="res://scripts/character_body_3d.gd" id="1_x2cc1"]
 [ext_resource type="PackedScene" path="res://ThrusterEffect.tscn" id="2_2aawl"]

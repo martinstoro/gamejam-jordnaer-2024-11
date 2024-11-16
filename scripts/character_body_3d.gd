@@ -8,11 +8,13 @@ extends CharacterBody3D
 @onready var MainBoosterAudio: AudioStreamPlayer = $MainBooster
 @onready var RotationBoosterAudio: AudioStreamPlayer = $RotationBooster
 @onready var PlayerExplosionAudio: AudioStreamPlayer = $PlayerExplosion
+@export var LET_GO = Vector3(0, 0, 0)
 
 const MASS = 1.0
 const ACCELLERATE_VEC = Vector3(0, 0, -20)
 const ROTATE_ANGLE = 6
 var is_alive = true
+var speed = Vector3(0, 0, 0)
 
 func _ready() -> void:
 	thruster.disable_thrusters()
@@ -22,13 +24,16 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if is_alive:
 		if Input.is_action_pressed("ui_up"):
-			velocity += ACCELLERATE_VEC.rotated(Vector3.UP, rotation.y) * delta
+			speed += ACCELLERATE_VEC.rotated(Vector3.UP, rotation.y) * delta 
 			thruster.enable_thrusters()
 			if !MainBoosterAudio.playing:
 				MainBoosterAudio.play()
 		if Input.is_action_just_released("ui_up"):
 			thruster.disable_thrusters()
 			MainBoosterAudio.stop()
+			velocity = speed
+			LET_GO = true
+			
 
 		if Input.is_action_pressed("ui_left"):
 			right_air_thruster.enable_airthruster()
