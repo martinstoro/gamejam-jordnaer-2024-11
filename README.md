@@ -8,8 +8,8 @@ A gamejam submission for the "Jordnær" theme.
 - [x] Mål
 - [ ] Reset game ui
 - [x] Start menu ui
-- [ ] Game over ui
-- [ ] Game won ui
+- [x] Game over ui
+- [x] Game won ui
 - [ ] Tweaking - fart, rotatsjon, gravitasjon, map size etc
 - [ ] Test eksport
 - [ ] Load animasjoner etc før start
