@@ -113,6 +113,7 @@ draw_pass_1 = SubResource("CylinderMesh_xi5q4")
 
 [node name="Fire" type="GPUParticles3D" parent="."]
 amount = 48
+lifetime = 0.32
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_0ilhy")
 draw_pass_1 = SubResource("SphereMesh_vw1s6")
