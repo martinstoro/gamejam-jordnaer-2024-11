@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://crri06jkingmg"]
+
+[ext_resource type="Script" path="res://scripts/gravity_sphere.gd" id="1_hb6wg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_423on"]
+albedo_color = Color(1, 0.266667, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_x4i8p"]
+material = SubResource("StandardMaterial3D_423on")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8uugd"]
+
+[node name="Planet" type="StaticBody3D"]
+transform = Transform3D(4.4, 0, 0, 0, 4.4, 0, 0, 0, 4.4, -2.53928, 0, -5.17666)
+script = ExtResource("1_hb6wg")
+
+[node name="Sphere" type="MeshInstance3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+mesh = SubResource("SphereMesh_x4i8p")
+
+[node name="Hitbox" type="CollisionShape3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+shape = SubResource("SphereShape3D_8uugd")

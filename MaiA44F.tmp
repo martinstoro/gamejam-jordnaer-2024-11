@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3 uid="uid://dfjtwvw3b8x8s"]
+
+[ext_resource type="Script" path="res://scripts/character_body_3d.gd" id="1_7qvk1"]
+[ext_resource type="Script" path="res://scripts/gravity_sphere.gd" id="2_k8f0w"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kg8q8"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_olvsu"]
+sky_material = SubResource("ProceduralSkyMaterial_kg8q8")
+
+[sub_resource type="Environment" id="Environment_4jkfr"]
+background_mode = 2
+sky = SubResource("Sky_olvsu")
+tonemap_mode = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_vp1gr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_itkit"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_x4i8p"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8uugd"]
+
+[node name="Root" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4jkfr")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" type="CharacterBody3D" parent="."]
+collision_layer = 3
+script = ExtResource("1_7qvk1")
+
+[node name="Cube" type="MeshInstance3D" parent="Player"]
+mesh = SubResource("BoxMesh_vp1gr")
+
+[node name="Hitbox" type="CollisionShape3D" parent="Player"]
+shape = SubResource("BoxShape3D_itkit")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3)
+
+[node name="Planet" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.53928, 0, -5.17666)
+script = ExtResource("2_k8f0w")
+
+[node name="Sphere" type="MeshInstance3D" parent="Planet"]
+mesh = SubResource("SphereMesh_x4i8p")
+
+[node name="Hitbox" type="CollisionShape3D" parent="Planet"]
+shape = SubResource("SphereShape3D_8uugd")
