@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bkb08kejt34ex" path="res://Explosion.tscn" id="3_5avv1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4aaq3"]
+size = Vector3(1, 1, 3)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ns4gt"]
 emission_enabled = true
@@ -20,16 +21,20 @@ material = SubResource("StandardMaterial3D_ns4gt")
 collision_layer = 3
 script = ExtResource("1_x2cc1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="Hitbox" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_4aaq3")
 
-[node name="Cube" type="MeshInstance3D" parent="."]
+[node name="ShipMesh" type="Node3D" parent="."]
+
+[node name="Triangle" type="MeshInstance3D" parent="ShipMesh"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -1)
 mesh = SubResource("PrismMesh_wdt4l")
+skeleton = NodePath("../..")
 
-[node name="Cube2" type="MeshInstance3D" parent="."]
+[node name="Cube" type="MeshInstance3D" parent="ShipMesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0.5)
 mesh = SubResource("BoxMesh_60wx0")
+skeleton = NodePath("../..")
 
 [node name="Thruster" parent="." instance=ExtResource("2_2aawl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
