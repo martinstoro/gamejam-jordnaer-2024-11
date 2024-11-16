@@ -1,4 +1,5 @@
 extends CharacterBody3D
+@onready var thruster: Node3D = $Thruster
 @onready var explosion: Node3D = $Explosion
 
 #const SPEED = 1
@@ -11,9 +12,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("ui_up"):
 		#velocity += direction
 		velocity += ACCELLERATE_VEC.rotated(Vector3.UP, rotation.y) * delta
-		explosion.enable_thrusters()
+		thruster.enable_thrusters()
 	else:
-		explosion.disable_thrusters()
+		thruster.disable_thrusters()
 	if Input.is_action_pressed("ui_left"):
 		rotation.y += ROTATE_ANGLE * delta
 	if Input.is_action_pressed("ui_right"):
@@ -33,8 +34,9 @@ func _physics_process(delta: float) -> void:
 
 
 func die():
+	explosion.explode()
+	await get_tree().create_timer(2.0).timeout
 	get_tree().reload_current_scene()
-
 
 # BASIC MOVEMENT
 #func _physics_process(delta: float) -> void:

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ca7vc7rpbqikh"]
+[gd_scene load_steps=8 format=3 uid="uid://ca7vc7rpbqikh"]
 
 [ext_resource type="Script" path="res://scripts/character_body_3d.gd" id="1_x2cc1"]
 [ext_resource type="PackedScene" uid="uid://unl0lsw5oeh5" path="res://ThrusterEffect.tscn" id="2_2aawl"]
+[ext_resource type="PackedScene" uid="uid://bkb08kejt34ex" path="res://Explosion.tscn" id="3_5avv1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4aaq3"]
 
@@ -30,5 +31,7 @@ mesh = SubResource("PrismMesh_wdt4l")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0.5)
 mesh = SubResource("BoxMesh_60wx0")
 
-[node name="Explosion" parent="." instance=ExtResource("2_2aawl")]
+[node name="Thruster" parent="." instance=ExtResource("2_2aawl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+
+[node name="Explosion" parent="." instance=ExtResource("3_5avv1")]
