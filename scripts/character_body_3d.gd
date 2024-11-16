@@ -25,7 +25,9 @@ func _physics_process(delta: float) -> void:
 		print("I collided with ", collision.get_collider().IS_DANGER)
 		if collision.get_collider().IS_DANGER: 
 			die()
-			
+	
+	if Input.is_key_pressed(KEY_R): 
+		get_tree().reload_current_scene()
 
 	move_and_slide()
 
