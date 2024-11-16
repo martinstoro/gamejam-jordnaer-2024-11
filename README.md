@@ -4,33 +4,37 @@ A gamejam submission for the "Jordnær" theme.
 ## TODO
 
 ### Essential
-- [ ] Krasj / failstate
-- [ ] Mål
+- [x] Krasj / failstate
+- [x] Mål
 - [ ] Reset game ui
-- [ ] Start menu ui
+- [x] Start menu ui
 - [ ] Game over ui
 - [ ] Game won ui
 - [ ] Tweaking - fart, rotatsjon, gravitasjon, map size etc
 - [ ] Test eksport
+- [ ] Zoom inn
 - [ ] Lyder
-  - [ ] Booster
-  - [ ] Rotasjons booster
-  - [ ] Krasj
+  - [x] Booster
+  - [x] Rotasjons booster
+  - [x] Krasj
+  - [x] Astroide krasj
   - [ ] Jorden eksploderer
 
 ### Nice to have
-- [ ] Eksplosjon spiller
-- [ ] Eksplosjon jorden
-- [ ] Booster animasjon
-- [ ] Rotasjons animasjon
-- [ ] Trail animasjon
+- [x] Eksplosjon spiller
+- [x] Eksplosjon jorden
+- [x] Booster animasjon
+- [x] Rotasjons animasjon
+- [x] Trail animasjon
 - [ ] Spillerdesign
-- [ ] Hindringer / astroider langs kanten
+- [x] Astroider
+- [ ] Astroider dør utenfor kanten
+- [ ] Død langs kanten / astroidebelte langs kanten
 - [ ] Musikk
 
 ### If we have time
 - [ ] Planetvariasjon
-- [ ] Bakgrunn
+- [ ] Bakgrunn / stjerner
 - [ ] Flere levels
 
 ### Ekstra konseper
