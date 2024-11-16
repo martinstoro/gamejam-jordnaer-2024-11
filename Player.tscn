@@ -31,3 +31,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0.5)
 mesh = SubResource("BoxMesh_60wx0")
 
 [node name="Explosion" parent="." instance=ExtResource("2_2aawl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
