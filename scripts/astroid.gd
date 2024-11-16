@@ -3,6 +3,7 @@ extends CharacterBody3D
 @export var IS_DANGER = true
 @onready var player: CharacterBody3D = $"../Player"
 @onready var astroidMesh: MeshInstance3D = $MeshInstance3D
+@onready var collisionShape: CollisionShape3D = $CollisionShape3D
 @onready var explosion: Node3D = $Explosion
 @onready var explosionAudio: AudioStreamPlayer = $AsteroidExplosion
 
@@ -20,5 +21,5 @@ func _physics_process(delta: float) -> void:
 			explosionAudio.play()
 		explosion.explode()
 		astroidMesh.hide()
-		await get_tree().create_timer(2.0).timeout
+		await get_tree().create_timer(1.0).timeout
 		queue_free()
