@@ -1,7 +1,7 @@
 extends StaticBody3D
-
 @onready var player: CharacterBody3D = $"../Player"
 
+@export var IS_DANGER = true
 const GRAVITY_FORCE = 0.5
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dfjtwvw3b8x8s"]
 
-[ext_resource type="PackedScene" uid="uid://ca7vc7rpbqikh" path="res://Player.tscn" id="1_ifff7"]
-[ext_resource type="PackedScene" uid="uid://crri06jkingmg" path="res://Planet.tscn" id="2_q31yk"]
+[ext_resource type="PackedScene" uid="uid://ca7vc7rpbqikh" path="res://Player.tscn" id="1_qb8a5"]
+[ext_resource type="PackedScene" uid="uid://crri06jkingmg" path="res://Planet.tscn" id="2_mbqbv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kg8q8"]
 
@@ -45,21 +45,11 @@ environment = SubResource("Environment_4jkfr")
 transform = Transform3D(0.182468, -0.636054, 0.74976, 0.976876, 0.0308468, -0.211571, 0.111443, 0.771027, 0.626975, 0, 9.7668, 0)
 shadow_enabled = true
 
-[node name="Player" parent="." instance=ExtResource("1_ifff7")]
+[node name="Player" parent="." instance=ExtResource("1_qb8a5")]
 
-[node name="Planet" parent="." instance=ExtResource("2_q31yk")]
+[node name="Planet" parent="." instance=ExtResource("2_mbqbv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
 
-[node name="Planet2" parent="." instance=ExtResource("2_q31yk")]
-transform = Transform3D(3.375, 0, 0, 0, 3.375, 0, 0, 0, 3.375, -10, 0, -10)
-
-[node name="Planet3" parent="." instance=ExtResource("2_q31yk")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 86.9511, 0, -73.3281)
-
-[node name="Planet4" parent="." instance=ExtResource("2_q31yk")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 204.722, 0, -69.5293)
-IS_DANGER = false
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(10000, 0, 0, 0, 10000, 0, 0, 0, 10000, 0.755829, -9.99919, -0.0176315)
+transform = Transform3D(10000, 0, 0, 0, 10000, 0, 0, 0, 10000, 0, -10, 0)
 mesh = SubResource("PlaneMesh_0ilb1")
