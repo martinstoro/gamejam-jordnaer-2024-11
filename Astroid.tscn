@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvh1maum3hk8"]
+[gd_scene load_steps=10 format=3 uid="uid://byl66at1yteee"]
 
 [ext_resource type="Script" path="res://scripts/astroid.gd" id="1_hfft7"]
-[ext_resource type="PackedScene" path="res://Explosion.tscn" id="2_1dh4u"]
+[ext_resource type="PackedScene" uid="uid://bkb08kejt34ex" path="res://Explosion.tscn" id="2_1dh4u"]
+[ext_resource type="AudioStream" uid="uid://bxroy8rcph118" path="res://assets/sounds/explosion-small.wav" id="3_1dinx"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_52vss"]
 frequency = 0.0196
@@ -30,6 +31,11 @@ rings = 5
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_64ksf"]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_kujb6"]
+random_pitch = 1.2
+streams_count = 1
+stream_0/stream = ExtResource("3_1dinx")
+
 [node name="CharacterBody3D" type="CharacterBody3D" groups=["astroids"]]
 script = ExtResource("1_hfft7")
 
@@ -43,3 +49,8 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 shape = SubResource("SphereShape3D_64ksf")
 
 [node name="Explosion" parent="." instance=ExtResource("2_1dh4u")]
+
+[node name="AsteroidExplosion" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_kujb6")
+volume_db = -10.0
+bus = &"Explosions"
