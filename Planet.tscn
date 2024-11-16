@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://crri06jkingmg"]
+[gd_scene load_steps=7 format=3 uid="uid://crri06jkingmg"]
 
 [ext_resource type="Script" path="res://scripts/gravity_sphere.gd" id="1_hb6wg"]
 
@@ -9,6 +9,20 @@ albedo_color = Color(1, 0.266667, 0, 1)
 material = SubResource("StandardMaterial3D_423on")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8uugd"]
+
+[sub_resource type="Gradient" id="Gradient_37qjn"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.05, 1)
+colors = PackedColorArray(0, 0, 0, 0.615686, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ua1kr"]
+gradient = SubResource("Gradient_37qjn")
+width = 500
+height = 500
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
 
 [node name="Planet" type="StaticBody3D"]
 transform = Transform3D(4.4, 0, 0, 0, 4.4, 0, 0, 0, 4.4, -2.53928, 0, -5.17666)
@@ -21,3 +35,7 @@ mesh = SubResource("SphereMesh_x4i8p")
 [node name="Hitbox" type="CollisionShape3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("SphereShape3D_8uugd")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, -1.74846e-07, -4, 0, 4, -1.74846e-07, 0, 0, 0)
+texture = SubResource("GradientTexture2D_ua1kr")
