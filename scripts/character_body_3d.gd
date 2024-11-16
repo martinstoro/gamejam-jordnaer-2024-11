@@ -7,6 +7,7 @@ extends CharacterBody3D
 @onready var ship_mesh: Node3D = $ShipMesh
 @onready var MainBoosterAudio: AudioStreamPlayer = $MainBooster
 @onready var RotationBoosterAudio: AudioStreamPlayer = $RotationBooster
+@onready var PlayerExplosionAudio: AudioStreamPlayer = $PlayerExplosion
 
 const MASS = 1.0
 const ACCELLERATE_VEC = Vector3(0, 0, -20)
@@ -46,15 +47,16 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_released("ui_right"):
 			RotationBoosterAudio.stop()
 			left_air_thruster.disable_airthruster()
+	
+		for index in range(get_slide_collision_count()):
+			var collision = get_slide_collision(index)
+			if collision.get_collider():
+				print("I collided with ", collision.get_collider().IS_DANGER)
+				if collision.get_collider().IS_DANGER: 
+					die()
+
 	else:
 		velocity = Vector3(0,0,0)
-	
-	for index in range(get_slide_collision_count()):
-		var collision = get_slide_collision(index)
-		if collision.get_collider():
-			print("I collided with ", collision.get_collider().IS_DANGER)
-			if collision.get_collider().IS_DANGER: 
-				die()
 	
 	if Input.is_key_pressed(KEY_R): 
 		get_tree().reload_current_scene()
@@ -71,6 +73,7 @@ func die():
 	right_air_thruster.disable_airthruster()
 	RotationBoosterAudio.stop()
 	left_air_thruster.disable_airthruster()
+	PlayerExplosionAudio.play()
 	explosion.explode()
 	await get_tree().create_timer(2.0).timeout
 	get_tree().reload_current_scene()
