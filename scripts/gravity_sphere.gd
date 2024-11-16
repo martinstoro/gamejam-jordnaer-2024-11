@@ -7,15 +7,21 @@ enum {METEOR, PLANET, BLACK_HOLE}
 @export var OBJECT_TYPE = PLANET
 @export var GRAVITY_FORCE = 10
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	var playerPosition = player.position
-	var direction = playerPosition - position
-	var distance = direction.length()
 	var mass = scale * scale 
 	
-	var gravity = GRAVITY_FORCE * direction.normalized() * mass / (distance * distance)
+	var playerPosition = player.position
+	var playerDirection = playerPosition - position
+	var playerDistance = playerDirection.length()
+	var playerGravity = GRAVITY_FORCE * playerDirection.normalized() * mass / (playerDistance * playerDistance)
+	player.velocity -= playerGravity
 	
-	player.velocity -= gravity
-	
+	var astroids = get_tree().get_nodes_in_group("astroids")
+	for astroid in astroids:
+		var astroidPosition = astroid.position
+		var astroidDirection = astroidPosition - position
+		var astroidDistance = astroidDirection.length()
+		var astroidGravity = GRAVITY_FORCE * astroidDirection.normalized() * mass / (astroidDistance * astroidDistance)
+		
+		astroid.velocity -= astroidGravity

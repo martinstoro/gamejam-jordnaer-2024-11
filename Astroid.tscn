@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://byl66at1yteee"]
+[gd_scene load_steps=7 format=3 uid="uid://cvh1maum3hk8"]
+
+[ext_resource type="Script" path="res://scripts/astroid.gd" id="1_hfft7"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_52vss"]
 frequency = 0.0196
@@ -25,7 +27,16 @@ height = 0.9
 radial_segments = 6
 rings = 5
 
-[node name="StaticBody3D" type="StaticBody3D"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_64ksf"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" groups=["astroids"]]
+script = ExtResource("1_hfft7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 mesh = SubResource("SphereMesh_ih04y")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+shape = SubResource("SphereShape3D_64ksf")
