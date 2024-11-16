@@ -8,6 +8,10 @@ extends CharacterBody3D
 @onready var MainBoosterAudio: AudioStreamPlayer = $MainBooster
 @onready var RotationBoosterAudio: AudioStreamPlayer = $RotationBooster
 @onready var PlayerExplosionAudio: AudioStreamPlayer = $PlayerExplosion
+@onready var win_lose_ui: CenterContainer = $"../WinLoseUI"
+@onready var restart_button: Button = $"../WinLoseUI/Container/RestartButton"
+@onready var next_level_button: Button = $"../WinLoseUI/Container/NextLevelButton"
+@onready var win_lose_label: Label = $"../WinLoseUI/Container/WinLoseLabel"
 
 const MASS = 1.0
 const ACCELLERATE_VEC = Vector3(0, 0, -20)
@@ -53,10 +57,10 @@ func _physics_process(delta: float) -> void:
 			if collision.get_collider():
 				print("I collided with ", collision.get_collider().IS_DANGER)
 				if collision.get_collider().IS_DANGER: 
-					die()
+					lose()
 				else:
 					collision.get_collider().explode()
-					die()
+					win()
 
 	else:
 		velocity = Vector3(0,0,0)
@@ -79,6 +83,17 @@ func die():
 	PlayerExplosionAudio.play()
 	explosion.explode()
 
+func lose():
+	win_lose_ui.visible = true
+	restart_button.visible = true
+	win_lose_label.text = "You died"
+	die()
+	
+func win():
+	win_lose_ui.visible = true
+	next_level_button.visible = true
+	win_lose_label.text = "You killed 8.2 billion people!"
+	die()
 
 # BASIC MOVEMENT
 #func _physics_process(delta: float) -> void:

@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://dfjtwvw3b8x8s"]
+[gd_scene load_steps=16 format=3 uid="uid://dfjtwvw3b8x8s"]
 
 [ext_resource type="PackedScene" uid="uid://ca7vc7rpbqikh" path="res://Player.tscn" id="1_ifff7"]
 [ext_resource type="Script" path="res://scripts/main_3d.gd" id="1_wao54"]
 [ext_resource type="PackedScene" uid="uid://crri06jkingmg" path="res://Planet.tscn" id="2_q31yk"]
-[ext_resource type="PackedScene" uid="uid://cvh1maum3hk8" path="res://Astroid.tscn" id="3_0wttf"]
+[ext_resource type="PackedScene" uid="uid://byl66at1yteee" path="res://Astroid.tscn" id="3_0wttf"]
+[ext_resource type="Script" path="res://restart_game.gd" id="5_vxv1v"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kg8q8"]
 
@@ -39,6 +40,11 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_uolxi"]
+font_size = 48
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="Root" type="Node3D"]
 script = ExtResource("1_wao54")
@@ -85,5 +91,47 @@ curve = SubResource("Curve3D_wlkgi")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
 transform = Transform3D(-0.999895, -1.15527e-05, 0.0145107, 0, 1, 0.000796147, -0.0145108, 0.000796064, -0.999894, -141.421, 0.165741, -208.995)
+
+[node name="WinLoseUI" type="CenterContainer" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="Control" parent="WinLoseUI"]
+layout_mode = 2
+
+[node name="WinLoseLabel" type="Label" parent="WinLoseUI/Container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_uolxi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="WinLoseUI/Container"]
+visible = false
+layout_mode = 2
+offset_left = -46.0
+offset_top = 77.0
+offset_right = 40.0
+offset_bottom = 108.0
+text = "Restart (r)
+"
+script = ExtResource("5_vxv1v")
+
+[node name="NextLevelButton" type="Button" parent="WinLoseUI/Container"]
+visible = false
+layout_mode = 2
+offset_left = -57.0
+offset_top = 76.0
+offset_right = 52.0
+offset_bottom = 107.0
+text = "Next level (e)"
 
 [connection signal="timeout" from="AstroidTimer" to="." method="_on_astroid_timer_timeout"]
