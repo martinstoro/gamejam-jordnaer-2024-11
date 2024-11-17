@@ -32,7 +32,7 @@ func _process(delta):
 	if !music_audio.playing:
 		music_audio.play()
 
-func lost():
+func off_screen():
 	win_lose_ui.visible = true
 	restart_button.visible = true
 	next_level_button.visible = false
