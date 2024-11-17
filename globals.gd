@@ -86,7 +86,6 @@ func win():
 		"Fuck yes",
 		"**** yes",
 		"Hot damn",
-		"Skibidi good",
 		":')",
 	]
 	win_lose_label.text = win_messages.pick_random()
