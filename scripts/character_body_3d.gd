@@ -75,6 +75,10 @@ func die():
 	left_air_thruster.disable_airthruster()
 	explosion.explode()
 
+func off_screen():
+	Globals.off_screen()
+	die()
+
 func lose():
 	Globals.lose()
 	die()
@@ -92,3 +96,6 @@ func win():
 		#velocity.z += direction.z * SPEED
 #
 	#move_and_slide()
+
+func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
+	off_screen()
