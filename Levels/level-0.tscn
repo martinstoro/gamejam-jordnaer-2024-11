@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://farvdq3ld7g4"]
+[gd_scene load_steps=11 format=3 uid="uid://cebd5qrtjnurb"]
 
 [ext_resource type="Script" path="res://scripts/main_3d.gd" id="1_ihci8"]
 [ext_resource type="PackedScene" uid="uid://cvh1maum3hk8" path="res://Astroid.tscn" id="2_mtmlx"]
 [ext_resource type="PackedScene" uid="uid://ca7vc7rpbqikh" path="res://Player.tscn" id="3_072ak"]
 [ext_resource type="PackedScene" uid="uid://crri06jkingmg" path="res://Planet.tscn" id="4_4jk6s"]
+[ext_resource type="PackedScene" uid="uid://bk7w5hutilkjx" path="res://resusabbles/StaticAstroid/StaticAstroid.tscn" id="5_7gsxe"]
 
 [sub_resource type="Gradient" id="Gradient_gbnwk"]
 offsets = PackedFloat32Array(0.158683, 1)
@@ -28,19 +29,22 @@ astroid_scene = ExtResource("2_mtmlx")
 [node name="Player" parent="." instance=ExtResource("3_072ak")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -68.9651, 0, -71.239)
 
-[node name="Planet" parent="." instance=ExtResource("4_4jk6s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
-
-[node name="Planet2" parent="." instance=ExtResource("4_4jk6s")]
-transform = Transform3D(3.375, 0, 0, 0, 3.375, 0, 0, 0, 3.375, -10, 0, -10)
-
-[node name="Planet3" parent="." instance=ExtResource("4_4jk6s")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 86.9511, 0, -73.3281)
-
 [node name="Planet4" parent="." instance=ExtResource("4_4jk6s")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 204.722, 0, -69.5293)
 IS_DANGER = false
 
 [node name="Ground" type="MeshInstance3D" parent="."]
-transform = Transform3D(10000, 0, 0, 0, 10000, 0, 0, 0, 10000, 0.755829, -9.99919, -0.0176315)
+transform = Transform3D(10000, 0, 0, 0, 10000, 0, 0, 0, 10000, 48.0107, -9.99919, -71.9613)
 mesh = SubResource("PlaneMesh_0ilb1")
+
+[node name="AstroidBelt" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.752, 0, -27.6347)
+
+[node name="Astroid" parent="AstroidBelt" instance=ExtResource("5_7gsxe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.2439, 0, -51.479)
+
+[node name="Astroid2" parent="AstroidBelt" instance=ExtResource("5_7gsxe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.3904, 0, -45.0931)
+
+[node name="Astroid3" parent="AstroidBelt" instance=ExtResource("5_7gsxe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.9569, 0, -39.3358)
