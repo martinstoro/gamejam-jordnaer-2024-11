@@ -21,6 +21,8 @@ func initialize(start_position, player_position):
 	rotationVelocityX = randf() * rotationSpeed
 	rotationVelocityY = randf() * rotationSpeed
 	rotationVelocityZ = randf() * rotationSpeed
+	var random_size := randf_range(0.5,2)
+	scale = Vector3(random_size,random_size,random_size)
 
 func _physics_process(delta: float) -> void:
 	rotation.x += rotationVelocityX
