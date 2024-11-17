@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ca7vc7rpbqikh" path="res://Player.tscn" id="1_ifff7"]
 [ext_resource type="Script" path="res://scripts/main_3d.gd" id="1_wao54"]
 [ext_resource type="PackedScene" uid="uid://crri06jkingmg" path="res://Planet.tscn" id="2_q31yk"]
-[ext_resource type="PackedScene" uid="uid://byl66at1yteee" path="res://Astroid.tscn" id="3_0wttf"]
+[ext_resource type="PackedScene" uid="uid://cvh1maum3hk8" path="res://Astroid.tscn" id="3_0wttf"]
 [ext_resource type="Script" path="res://restart_game.gd" id="5_vxv1v"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kg8q8"]
@@ -53,7 +53,7 @@ astroid_scene = ExtResource("3_0wttf")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 90.6505, 101.778, -69.0317)
 projection = 1
-size = 275.595
+size = 200.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4jkfr")
@@ -63,7 +63,7 @@ transform = Transform3D(0.182468, -0.636054, 0.74976, 0.976876, 0.0308468, -0.21
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_ifff7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.9651, 0, -158.239)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -68.9651, 0, -71.239)
 
 [node name="Planet" parent="." instance=ExtResource("2_q31yk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
