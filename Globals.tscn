@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dkxkbla3827vf"]
+[gd_scene load_steps=21 format=3 uid="uid://c5kv7ogakq0hy"]
 
 [ext_resource type="Script" path="res://globals.gd" id="1_61i6j"]
 [ext_resource type="Script" path="res://restart_game.gd" id="1_u1ad4"]
@@ -38,6 +38,7 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
+
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_rgc7q"]
 streams_count = 9
 stream_0/stream = ExtResource("4_3gexv")
@@ -126,14 +127,14 @@ autostart = true
 curve = SubResource("Curve3D_gbmkl")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
-transform = Transform3D(-0.999888, -1.15525e-05, 0.0145106, 0, 0.999982, 0.000796139, -0.0145107, 0.00079605, -0.999883, -141.421, 0.165741, -208.995)
+transform = Transform3D(-0.999888, -1.15525e-05, 0.0145106, 0, 0.999982, 0.000796138, -0.0145107, 0.000796049, -0.999883, -141.421, 0.165741, -208.995)
 
-[connection signal="timeout" from="AstroidTimer" to="." method="_on_astroid_timer_timeout"]
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_rgc7q")
-bus = &"Music"
 
 [node name="PlayerExplosion" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_uvewj")
 volume_db = 7.0
 bus = &"Explosions"
+
+[connection signal="timeout" from="AstroidTimer" to="." method="_on_astroid_timer_timeout"]
