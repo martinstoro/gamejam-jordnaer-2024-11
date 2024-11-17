@@ -74,7 +74,22 @@ func win():
 	win_lose_ui.visible = true
 	restart_button.visible = false
 	next_level_button.visible = true
-	win_lose_label.text = "You killed 8.2 billion people!"
+	var win_messages = [
+		"You killed 8.2 billion people!",
+		"Everyone died!",
+		"You got down to Earth!",
+		"No Earth, no problems",
+		"Global warming solved!",
+		"Woho!",
+		"The Tesla has returned home",
+		"You did it!",
+		"Fuck yes",
+		"**** yes",
+		"Hot damn",
+		"Skibidi good",
+		":')",
+	]
+	win_lose_label.text = win_messages.pick_random()
 
 func reset():
 	destroyAstroids()
