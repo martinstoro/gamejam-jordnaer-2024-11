@@ -31,8 +31,8 @@ A gamejam submission for the "Jordnær" theme.
 - [x] Astroider
 - [x] Musikk
 - [ ] Spillerdesign
-- [ ] Astroider dør utenfor kanten
-- [ ] Død langs kanten / astroidebelte langs kanten
+- [x] Astroider dør utenfor kanten
+- [x] Død langs kanten / astroidebelte langs kanten
 - [ ] Variabel meteorstorm
 - [ ] Reset meteorstorm
 - [ ] Lyd av folk som dør
