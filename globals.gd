@@ -9,6 +9,8 @@ extends Node
 @onready var win_lose_label: Label = $WinLoseUI/Container/WinLoseLabel
 @onready var music_audio: AudioStreamPlayer = $Music
 @onready var player_explosion_audio: AudioStreamPlayer = $PlayerExplosion
+@onready var earth_death_audio: AudioStreamPlayer = $EarthDeath
+@onready var player_off_screen_audio: AudioStreamPlayer = $PlayerOffScreen
 
 func _on_astroid_timer_timeout() -> void:
 	var scene = get_tree().current_scene
@@ -41,6 +43,7 @@ func next():
 	
 
 func off_screen():
+	player_off_screen_audio.play()
 	win_lose_ui.visible = true
 	restart_button.visible = true
 	next_level_button.visible = false
@@ -55,6 +58,7 @@ func lose():
 
 func win():
 	player_explosion_audio.play()
+	earth_death_audio.play()
 	win_lose_ui.visible = true
 	restart_button.visible = false
 	next_level_button.visible = true

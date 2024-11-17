@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://crri06jkingmg"]
 
 [ext_resource type="Script" path="res://scripts/gravity_sphere.gd" id="1_hb6wg"]
-[ext_resource type="PackedScene" path="res://Explosion.tscn" id="2_jevxy"]
+[ext_resource type="PackedScene" uid="uid://bkb08kejt34ex" path="res://Explosion.tscn" id="2_jevxy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6nhk"]
 albedo_color = Color(1, 0.233333, 0, 1)
