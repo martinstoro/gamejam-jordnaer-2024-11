@@ -37,6 +37,7 @@ A gamejam submission for the "Jordnær" theme.
 ### If we have time
 - [ ] Planetvariasjon
 - [ ] Bakgrunn / stjerner
+- [ ] Endre bakgrunn for hver level
 - [ ] Flere levels
 
 ### Ekstra konseper
