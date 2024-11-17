@@ -4,7 +4,7 @@ A gamejam submission for the "Jordnær" theme.
 ## TODO
 
 ### Essential
-- [ ] Navn
+- [ ] Navn - Forslag: "Down with Earth!"
 - [x] Krasj / failstate
 - [x] Mål
 - [x] Reset game ui
