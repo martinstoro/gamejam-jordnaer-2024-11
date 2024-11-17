@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://g2ebr61q4bk1"]
+
+[ext_resource type="Script" path="res://Levels/level.gd" id="1_v1uqd"]
+[ext_resource type="PackedScene" uid="uid://ca7vc7rpbqikh" path="res://Player.tscn" id="2_2tcbg"]
+[ext_resource type="PackedScene" uid="uid://crri06jkingmg" path="res://Planet.tscn" id="3_815gd"]
+[ext_resource type="PackedScene" uid="uid://bk7w5hutilkjx" path="res://resusabbles/StaticAstroid/StaticAstroid.tscn" id="4_hhdrj"]
+
+[sub_resource type="Gradient" id="Gradient_gbnwk"]
+offsets = PackedFloat32Array(0.158683, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_k0y17"]
+frequency = 0.0417
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gctbd"]
+color_ramp = SubResource("Gradient_gbnwk")
+noise = SubResource("FastNoiseLite_k0y17")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tl2bd"]
+albedo_texture = SubResource("NoiseTexture2D_gctbd")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0ilb1"]
+material = SubResource("StandardMaterial3D_tl2bd")
+
+[node name="Root2" type="Node3D"]
+script = ExtResource("1_v1uqd")
+
+[node name="Player" parent="." instance=ExtResource("2_2tcbg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -68.9651, 0, -71.239)
+
+[node name="Earth" parent="." instance=ExtResource("3_815gd")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 257.702, 0, -147.212)
+IS_DANGER = false
+
+[node name="Planet5" parent="." instance=ExtResource("3_815gd")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 108.998, -1.52588e-05, -149.273)
+
+[node name="Planet6" parent="." instance=ExtResource("3_815gd")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 188.79, -1.52588e-05, 0.316494)
+
+[node name="Planet7" parent="." instance=ExtResource("3_815gd")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 125.572, -1.52588e-05, -119.124)
+
+[node name="Planet8" parent="." instance=ExtResource("3_815gd")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 86.5173, -1.52588e-05, -111.845)
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(10000, 0, 0, 0, 10000, 0, 0, 0, 10000, 48.0107, -9.99919, -71.9613)
+mesh = SubResource("PlaneMesh_0ilb1")
+
+[node name="StaticAstroid" parent="." instance=ExtResource("4_hhdrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143.259, 0, -62.3787)
+
+[node name="StaticAstroid2" parent="." instance=ExtResource("4_hhdrj")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 174.007, 1.52588e-05, -59.1853)
+
+[node name="StaticAstroid3" parent="." instance=ExtResource("4_hhdrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.282, 0, -70.3754)
+
+[node name="StaticAstroid4" parent="." instance=ExtResource("4_hhdrj")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 125.103, 0, -38.8435)
+
+[node name="StaticAstroid5" parent="." instance=ExtResource("4_hhdrj")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 153.901, 0, -105.43)
