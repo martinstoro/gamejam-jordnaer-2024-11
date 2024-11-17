@@ -1,7 +1,6 @@
 extends CharacterBody3D
 
 @export var IS_DANGER = true
-@onready var player: CharacterBody3D = $"../Player"
 @onready var astroidMesh: MeshInstance3D = $MeshInstance3D
 @onready var collisionShape: CollisionShape3D = $CollisionShape3D
 @onready var explosion: Node3D = $Explosion
