@@ -163,29 +163,28 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Back" type="Button" parent="LevelSelect"]
+layout_mode = 0
 offset_left = 254.5
-offset_top = 157.0
+offset_top = 266.0
 offset_right = 336.5
-offset_bottom = 210.0
+offset_bottom = 319.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
 text = "Back"
 
-[node name="VBoxContainer" type="Control" parent="LevelSelect"]
+[node name="VBoxContainer" type="GridContainer" parent="LevelSelect"]
 layout_mode = 2
-anchors_preset = 0
-offset_top = 43.0
-offset_right = 591.0
-offset_bottom = 96.0
+offset_top = 13.0
+offset_right = 609.0
+offset_bottom = 243.0
 size_flags_horizontal = 0
 size_flags_vertical = 8
+columns = 5
 metadata/_edit_group_ = true
 
 [node name="Button" type="Button" parent="LevelSelect/VBoxContainer"]
 layout_mode = 2
-offset_right = 115.0
-offset_bottom = 53.0
 theme_override_font_sizes/font_size = 32
 text = "Level 1"
 script = ExtResource("3_chc5p")
@@ -193,9 +192,6 @@ level = 1
 
 [node name="Button2" type="Button" parent="LevelSelect/VBoxContainer"]
 layout_mode = 2
-offset_left = 119.0
-offset_right = 234.0
-offset_bottom = 53.0
 theme_override_font_sizes/font_size = 32
 text = "Level 2"
 script = ExtResource("3_chc5p")
@@ -203,9 +199,6 @@ level = 2
 
 [node name="Button3" type="Button" parent="LevelSelect/VBoxContainer"]
 layout_mode = 2
-offset_left = 238.0
-offset_right = 353.0
-offset_bottom = 53.0
 theme_override_font_sizes/font_size = 32
 text = "Level 3"
 script = ExtResource("3_chc5p")
@@ -213,9 +206,6 @@ level = 3
 
 [node name="Button4" type="Button" parent="LevelSelect/VBoxContainer"]
 layout_mode = 2
-offset_left = 357.0
-offset_right = 472.0
-offset_bottom = 53.0
 theme_override_font_sizes/font_size = 32
 text = "Level 4"
 script = ExtResource("3_chc5p")
@@ -223,13 +213,74 @@ level = 4
 
 [node name="Button5" type="Button" parent="LevelSelect/VBoxContainer"]
 layout_mode = 2
-offset_left = 476.0
-offset_right = 591.0
-offset_bottom = 53.0
 theme_override_font_sizes/font_size = 32
 text = "Level 5"
 script = ExtResource("3_chc5p")
-level = 4
+level = 5
+
+[node name="Button6" type="Button" parent="LevelSelect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Level 6
+"
+script = ExtResource("3_chc5p")
+level = 6
+
+[node name="Button7" type="Button" parent="LevelSelect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Level 7
+"
+script = ExtResource("3_chc5p")
+level = 7
+
+[node name="Button8" type="Button" parent="LevelSelect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Level 8
+"
+script = ExtResource("3_chc5p")
+level = 8
+
+[node name="Button9" type="Button" parent="LevelSelect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Level 9
+"
+script = ExtResource("3_chc5p")
+level = 9
+
+[node name="Button10" type="Button" parent="LevelSelect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Level 10
+"
+script = ExtResource("3_chc5p")
+level = 10
+
+[node name="Button11" type="Button" parent="LevelSelect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Level 11
+"
+script = ExtResource("3_chc5p")
+level = 11
+
+[node name="Button12" type="Button" parent="LevelSelect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Level 12
+"
+script = ExtResource("3_chc5p")
+level = 12
+
+[node name="Button13" type="Button" parent="LevelSelect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Level 13
+"
+script = ExtResource("3_chc5p")
+level = 13
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
