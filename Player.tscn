@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://ca7vc7rpbqikh"]
 
 [ext_resource type="Script" path="res://scripts/character_body_3d.gd" id="1_x2cc1"]
-[ext_resource type="PackedScene" uid="uid://unl0lsw5oeh5" path="res://ThrusterEffect.tscn" id="2_2aawl"]
-[ext_resource type="PackedScene" uid="uid://bkb08kejt34ex" path="res://Explosion.tscn" id="3_5avv1"]
+[ext_resource type="PackedScene" path="res://ThrusterEffect.tscn" id="2_2aawl"]
+[ext_resource type="PackedScene" path="res://Explosion.tscn" id="3_5avv1"]
 [ext_resource type="AudioStream" uid="uid://ce0yahrkebxm7" path="res://assets/sounds/booster-loop-v1.wav" id="4_a7fdy"]
 [ext_resource type="AudioStream" uid="uid://pjnedhatunss" path="res://assets/sounds/booster-rotate-loop-v1.wav" id="5_7i0lw"]
 [ext_resource type="PackedScene" path="res://AirThruster.tscn" id="6_cdtl7"]

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dnnfthah2vpv7" path="res://assets/star.png" id="2_edjj6"]
 [ext_resource type="PackedScene" uid="uid://crri06jkingmg" path="res://Planet.tscn" id="3_g0gaf"]
 [ext_resource type="PackedScene" uid="uid://ca7vc7rpbqikh" path="res://Player.tscn" id="3_lc0l7"]
-[ext_resource type="PackedScene" uid="uid://bkb08kejt34ex" path="res://Explosion.tscn" id="5_u06ni"]
+[ext_resource type="PackedScene" path="res://Explosion.tscn" id="5_u06ni"]
 [ext_resource type="Texture2D" uid="uid://62yvt88bs87v" path="res://icon.svg" id="7_b5yql"]
 [ext_resource type="Script" path="res://loading_icon.gd" id="8_vjscg"]
 
@@ -12,14 +12,14 @@
 offsets = PackedFloat32Array(0, 0.336788, 0.683938, 1)
 colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_7tal7"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vstef"]
 gradient = SubResource("Gradient_imr1o")
 
 [sub_resource type="Curve" id="Curve_d1lej"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.742081, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.472527), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_u5hnk"]
+[sub_resource type="CurveTexture" id="CurveTexture_y4stg"]
 curve = SubResource("Curve_d1lej")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bx3ng"]
@@ -29,8 +29,8 @@ emission_shape = 3
 emission_box_extents = Vector3(1, 1, 1)
 gravity = Vector3(0, 0, 0)
 scale_min = 0.1
-scale_curve = SubResource("CurveTexture_u5hnk")
-color_ramp = SubResource("GradientTexture1D_7tal7")
+scale_curve = SubResource("CurveTexture_y4stg")
+color_ramp = SubResource("GradientTexture1D_vstef")
 
 [node name="Menu" type="Control"]
 layout_mode = 3
