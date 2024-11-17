@@ -12,6 +12,7 @@ albedo_color = Color(1, 0.233333, 0, 1)
 material = SubResource("StandardMaterial3D_w6nhk")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4fk5f"]
+albedo_color = Color(0, 0.5, 1, 1)
 albedo_texture = ExtResource("2_y4a4w")
 emission = Color(0, 0.45, 1, 1)
 emission_energy_multiplier = 0.25
