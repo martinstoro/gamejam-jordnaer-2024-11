@@ -10,9 +10,6 @@ extends Node
 @onready var music_audio: AudioStreamPlayer = $Music
 @onready var player_explosion_audio: AudioStreamPlayer = $PlayerExplosion
 
-
-
-
 func _on_astroid_timer_timeout() -> void:
 	var scene = get_tree().current_scene
 	if scene != null:

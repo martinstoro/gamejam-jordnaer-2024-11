@@ -1,4 +1,7 @@
 extends CharacterBody3D
+
+@export var isForLoading: bool = false
+
 @onready var thruster: Node3D = $Thruster
 @onready var explosion: Node3D = $Explosion
 @onready var left_air_thruster: Node3D = $LeftAirThruster
@@ -20,6 +23,10 @@ func _ready() -> void:
 	right_air_thruster.disable_airthruster()
 
 func _physics_process(delta: float) -> void:
+	if isForLoading:
+		left_air_thruster.enable_airthruster()
+		right_air_thruster.enable_airthruster()
+		thruster.enable_thrusters()
 	if is_alive:
 		if Input.is_action_pressed("ui_up"):
 			velocity += ACCELLERATE_VEC.rotated(Vector3.UP, rotation.y) * delta

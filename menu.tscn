@@ -1,7 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://dgjsyn8cdn0b"]
+[gd_scene load_steps=13 format=3 uid="uid://sgkqe5oajc3t"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_losu8"]
 [ext_resource type="Texture2D" uid="uid://dnnfthah2vpv7" path="res://assets/star.png" id="2_edjj6"]
+[ext_resource type="PackedScene" uid="uid://crri06jkingmg" path="res://Planet.tscn" id="3_g0gaf"]
+[ext_resource type="PackedScene" uid="uid://ca7vc7rpbqikh" path="res://Player.tscn" id="3_lc0l7"]
+[ext_resource type="PackedScene" uid="uid://bkb08kejt34ex" path="res://Explosion.tscn" id="5_u06ni"]
+[ext_resource type="Texture2D" uid="uid://62yvt88bs87v" path="res://icon.svg" id="7_b5yql"]
+[ext_resource type="Script" path="res://loading_icon.gd" id="8_vjscg"]
 
 [sub_resource type="Gradient" id="Gradient_imr1o"]
 offsets = PackedFloat32Array(0, 0.336788, 0.683938, 1)
@@ -148,6 +153,21 @@ offset_bottom = 173.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 64
 text = "Down with Earth!"
+
+[node name="Player" parent="." instance=ExtResource("3_lc0l7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.50367, 0, 0)
+isForLoading = true
+
+[node name="Planet" parent="." instance=ExtResource("3_g0gaf")]
+
+[node name="Explosion" parent="." instance=ExtResource("5_u06ni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41962, 0, 1.80899)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(22, 24)
+scale = Vector2(0.213115, 0.213115)
+texture = ExtResource("7_b5yql")
+script = ExtResource("8_vjscg")
 
 [connection signal="pressed" from="CreditsMenu/VBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="StartMenu/VBoxContainer/Start" to="." method="_on_start_pressed"]

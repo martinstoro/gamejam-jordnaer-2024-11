@@ -1,9 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://c5kv7ogakq0hy"]
+[gd_scene load_steps=21 format=3 uid="uid://d0r4yyvjueehe"]
 
 [ext_resource type="Script" path="res://globals.gd" id="1_61i6j"]
 [ext_resource type="Script" path="res://restart_game.gd" id="1_u1ad4"]
 [ext_resource type="Script" path="res://next_level_button.gd" id="2_exfd0"]
-[ext_resource type="PackedScene" uid="uid://cvh1maum3hk8" path="res://Astroid.tscn" id="2_ud3gb"]
+[ext_resource type="PackedScene" uid="uid://byl66at1yteee" path="res://Astroid.tscn" id="2_ud3gb"]
 [ext_resource type="AudioStream" uid="uid://fymmqhhnkbxg" path="res://assets/music/c-long.wav" id="4_3gexv"]
 [ext_resource type="AudioStream" uid="uid://88vxs5ctw62" path="res://assets/music/c-short.wav" id="5_fohwe"]
 [ext_resource type="AudioStream" uid="uid://egjjstoi122o" path="res://assets/music/d-long.wav" id="6_hhkom"]

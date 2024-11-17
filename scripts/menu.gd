@@ -2,9 +2,11 @@ extends Control
 
 func _ready() -> void:
 	start_menu()
+	Globals.start_astroids()
 
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_file("res://Levels/level-0.tscn")
+	Globals.reset()
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
