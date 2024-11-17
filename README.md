@@ -14,7 +14,7 @@ A gamejam submission for the "Jordnær" theme.
 - [ ] Tweaking - fart, rotatsjon, gravitasjon, map size etc
 - [x] Test eksport
 - [ ] Load animasjoner etc før start
-- [ ] Zoom inn
+- [x] Zoom inn
 - [ ] Lyder
   - [x] Booster
   - [x] Rotasjons booster
