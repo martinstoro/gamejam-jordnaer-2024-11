@@ -19,13 +19,13 @@ material = SubResource("StandardMaterial3D_4fk5f")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8uugd"]
 
-[sub_resource type="Gradient" id="Gradient_37qjn"]
+[sub_resource type="Gradient" id="Gradient_vcix0"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0.05, 1)
 colors = PackedColorArray(0, 0, 0, 0.615686, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ua1kr"]
-gradient = SubResource("Gradient_37qjn")
+gradient = SubResource("Gradient_vcix0")
 width = 500
 height = 500
 use_hdr = true
