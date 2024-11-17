@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bk8pfptscae0p"]
+[gd_scene load_steps=10 format=3 uid="uid://bd4gx5xuggx0i"]
 
 [ext_resource type="Script" path="res://Levels/level.gd" id="1_mrltc"]
 [ext_resource type="PackedScene" uid="uid://ca7vc7rpbqikh" path="res://Player.tscn" id="2_scpfy"]
@@ -28,7 +28,7 @@ script = ExtResource("1_mrltc")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -68.9651, 0, -71.239)
 
 [node name="Earth" parent="." instance=ExtResource("3_v7x67")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 257.702, 0, -147.212)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 243.059, 3.05176e-05, -145.963)
 IS_DANGER = false
 
 [node name="Planet5" parent="." instance=ExtResource("3_v7x67")]
