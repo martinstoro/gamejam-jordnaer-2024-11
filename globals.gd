@@ -91,6 +91,12 @@ func win():
 	]
 	win_lose_label.text = win_messages.pick_random()
 
+func final():
+	win_lose_ui.visible = true
+	restart_button.visible = false
+	next_level_button.visible = false
+	win_lose_label.text = "Congratulations! You bastard!"
+
 func reset():
 	destroyAstroids()
 	win_lose_ui.visible = false
