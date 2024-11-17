@@ -121,7 +121,6 @@ script = ExtResource("2_exfd0")
 
 [node name="AstroidTimer" type="Timer" parent="."]
 wait_time = 0.5
-autostart = true
 
 [node name="SpawnPath" type="Path3D" parent="."]
 curve = SubResource("Curve3D_gbmkl")

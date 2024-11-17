@@ -71,3 +71,12 @@ func destroyAstroids():
 	var astroids = get_tree().get_nodes_in_group("astroids")
 	for astroid in astroids:
 		astroid.queue_free()
+
+func start_astroids():
+	$AstroidTimer.start()
+	
+func stop_astroids():
+	$AstroidTimer.stop()
+	
+func astroid_spawn_time(time:float) -> void:
+	$AstroidTimer.wait_time = time
