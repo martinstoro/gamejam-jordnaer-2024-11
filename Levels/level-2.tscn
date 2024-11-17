@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dobh27e834x0e"]
+[gd_scene load_steps=9 format=3 uid="uid://coxwnxgpe2ska"]
 
-[ext_resource type="Script" path="res://Levels/level.gd" id="1_ltx7m"]
-[ext_resource type="PackedScene" uid="uid://ca7vc7rpbqikh" path="res://Player.tscn" id="2_a8cbi"]
-[ext_resource type="PackedScene" uid="uid://crri06jkingmg" path="res://Planet.tscn" id="3_ihpqi"]
-[ext_resource type="PackedScene" uid="uid://bk7w5hutilkjx" path="res://resusabbles/StaticAstroid/StaticAstroid.tscn" id="4_tx0o8"]
+[ext_resource type="Script" path="res://Levels/level.gd" id="1_nub1t"]
+[ext_resource type="PackedScene" uid="uid://ca7vc7rpbqikh" path="res://Player.tscn" id="2_rbn67"]
+[ext_resource type="PackedScene" uid="uid://crri06jkingmg" path="res://Planet.tscn" id="3_e3d4t"]
 
 [sub_resource type="Gradient" id="Gradient_gbnwk"]
 offsets = PackedFloat32Array(0.158683, 1)
@@ -22,55 +21,19 @@ albedo_texture = SubResource("NoiseTexture2D_gctbd")
 material = SubResource("StandardMaterial3D_tl2bd")
 
 [node name="Root2" type="Node3D"]
-script = ExtResource("1_ltx7m")
-ASTROID_FREQUENCY = 1.0
+script = ExtResource("1_nub1t")
+ASTROID_SPAWN_TIME = 0.1
 
-[node name="Player" parent="." instance=ExtResource("2_a8cbi")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -60.7225, 0, -23.4143)
+[node name="Player" parent="." instance=ExtResource("2_rbn67")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -68.9651, 0, -71.239)
 
-[node name="Planet4" parent="." instance=ExtResource("3_ihpqi")]
-transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 232.686, 0, -139.392)
+[node name="Earth" parent="." instance=ExtResource("3_e3d4t")]
+transform = Transform3D(13.655, 0, 0, 0, 13.655, 0, 0, 0, 13.655, 204.722, 0, -69.5293)
 IS_DANGER = false
 
-[node name="Planet5" parent="." instance=ExtResource("3_ihpqi")]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 3.5931, 0, -124.478)
-
-[node name="Planet6" parent="." instance=ExtResource("3_ihpqi")]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 210.155, 0, -38.6099)
+[node name="Planet" parent="." instance=ExtResource("3_e3d4t")]
+transform = Transform3D(7.515, 0, 0, 0, 7.515, 0, 0, 0, 7.515, 83.2299, 0, -68.8057)
 
 [node name="Ground" type="MeshInstance3D" parent="."]
 transform = Transform3D(10000, 0, 0, 0, 10000, 0, 0, 0, 10000, 48.0107, -9.99919, -71.9613)
 mesh = SubResource("PlaneMesh_0ilb1")
-
-[node name="StaticAstroid" parent="." instance=ExtResource("4_tx0o8")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 89.0544, 0, -121.394)
-
-[node name="StaticAstroid2" parent="." instance=ExtResource("4_tx0o8")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 93.9711, 0, -128.479)
-
-[node name="StaticAstroid3" parent="." instance=ExtResource("4_tx0o8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.913, 0, -127.792)
-
-[node name="StaticAstroid4" parent="." instance=ExtResource("4_tx0o8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.507, 0, -136.425)
-
-[node name="StaticAstroid5" parent="." instance=ExtResource("4_tx0o8")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 113.957, 0, -141.498)
-
-[node name="StaticAstroid6" parent="." instance=ExtResource("4_tx0o8")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 105.925, 0, -25.4077)
-
-[node name="StaticAstroid7" parent="." instance=ExtResource("4_tx0o8")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 113.932, 0, -22.1596)
-
-[node name="StaticAstroid8" parent="." instance=ExtResource("4_tx0o8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122.874, 0, -21.4728)
-
-[node name="StaticAstroid9" parent="." instance=ExtResource("4_tx0o8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.185, 0, -15.0587)
-
-[node name="StaticAstroid10" parent="." instance=ExtResource("4_tx0o8")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 119.342, 0, -15.7576)
-
-[node name="StaticAstroid11" parent="." instance=ExtResource("4_tx0o8")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 138.497, 0, -21.7997)
