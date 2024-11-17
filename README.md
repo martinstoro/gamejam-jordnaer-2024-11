@@ -4,14 +4,15 @@ A gamejam submission for the "Jordnær" theme.
 ## TODO
 
 ### Essential
+- [ ] Navn
 - [x] Krasj / failstate
 - [x] Mål
-- [ ] Reset game ui
+- [x] Reset game ui
 - [x] Start menu ui
 - [x] Game over ui
 - [x] Game won ui
 - [ ] Tweaking - fart, rotatsjon, gravitasjon, map size etc
-- [ ] Test eksport
+- [x] Test eksport
 - [ ] Load animasjoner etc før start
 - [ ] Zoom inn
 - [ ] Lyder
