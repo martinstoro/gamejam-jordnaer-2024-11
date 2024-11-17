@@ -8,7 +8,6 @@ extends CharacterBody3D
 @onready var MainBoosterAudio: AudioStreamPlayer = $MainBooster
 @onready var RotationBoosterAudio: AudioStreamPlayer = $RotationBooster
 @onready var PlayerExplosionAudio: AudioStreamPlayer = $PlayerExplosion
-@onready var restart_button: Button = $"../WinLoseUI/Container/RestartButton"
 
 const MASS = 1.0
 const ACCELLERATE_VEC = Vector3(0, 0, -20)

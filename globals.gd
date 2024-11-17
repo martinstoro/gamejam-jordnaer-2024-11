@@ -1,8 +1,23 @@
 extends Node
+
+@export var astroid_scene: PackedScene
+
 @onready var restart_button: Button = $WinLoseUI/Container/RestartButton
 @onready var next_level_button: Button = $WinLoseUI/Container/NextLevelButton
 @onready var win_lose_ui: CenterContainer = $WinLoseUI
 @onready var win_lose_label: Label = $WinLoseUI/Container/WinLoseLabel
+
+func _on_astroid_timer_timeout() -> void:
+	var scene = get_tree().current_scene
+	if scene != null:
+		var player = scene.get_node("Player")
+		if player != null:	
+			var astroid = astroid_scene.instantiate()
+			var astroid_spawn_location = get_node("SpawnPath/SpawnLocation")
+			astroid_spawn_location.progress_ratio = randf()
+			astroid.initialize(astroid_spawn_location.position, player.position)
+			add_child(astroid)
+
 
 func _process(delta):
 	if Input.is_key_pressed(KEY_R): 

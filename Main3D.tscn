@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dfjtwvw3b8x8s"]
+[gd_scene load_steps=10 format=3 uid="uid://dfjtwvw3b8x8s"]
 
 [ext_resource type="PackedScene" uid="uid://ca7vc7rpbqikh" path="res://Player.tscn" id="1_ifff7"]
 [ext_resource type="Script" path="res://scripts/main_3d.gd" id="1_wao54"]
@@ -20,13 +20,6 @@ albedo_texture = SubResource("NoiseTexture2D_gctbd")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0ilb1"]
 material = SubResource("StandardMaterial3D_tl2bd")
-
-[sub_resource type="Curve3D" id="Curve3D_wlkgi"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -141.421, 0.165741, -208.995, 0, 0, 0, 0, 0, 0, -145.611, -0.0641479, 79.7262, 0, 0, 0, 0, 0, 0, 338.837, -0.0641174, 82.7035, 0, 0, 0, 0, 0, 0, 334.571, 0.165833, -206.07, 0, 0, 0, 0, 0, 0, -141.421, 0.165741, -208.995),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
-}
-point_count = 5
 
 [node name="Root" type="Node3D"]
 script = ExtResource("1_wao54")
@@ -51,15 +44,3 @@ IS_DANGER = false
 [node name="Ground" type="MeshInstance3D" parent="."]
 transform = Transform3D(10000, 0, 0, 0, 10000, 0, 0, 0, 10000, 0.755829, -9.99919, -0.0176315)
 mesh = SubResource("PlaneMesh_0ilb1")
-
-[node name="AstroidTimer" type="Timer" parent="."]
-wait_time = 0.5
-autostart = true
-
-[node name="SpawnPath" type="Path3D" parent="."]
-curve = SubResource("Curve3D_wlkgi")
-
-[node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
-transform = Transform3D(-0.999895, -1.15527e-05, 0.0145107, 0, 1, 0.000796147, -0.0145108, 0.000796064, -0.999894, -141.421, 0.165741, -208.995)
-
-[connection signal="timeout" from="AstroidTimer" to="." method="_on_astroid_timer_timeout"]

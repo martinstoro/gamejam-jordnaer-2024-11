@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5kv7ogakq0hy"]
+[gd_scene load_steps=10 format=3 uid="uid://c5kv7ogakq0hy"]
 
 [ext_resource type="Script" path="res://globals.gd" id="1_61i6j"]
 [ext_resource type="Script" path="res://restart_game.gd" id="1_u1ad4"]
 [ext_resource type="Script" path="res://next_level_button.gd" id="2_exfd0"]
+[ext_resource type="PackedScene" uid="uid://cvh1maum3hk8" path="res://Astroid.tscn" id="2_ud3gb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kg8q8"]
 
@@ -21,8 +22,16 @@ font_size = 48
 shadow_size = 2
 shadow_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Curve3D" id="Curve3D_gbmkl"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -141.421, 0.165741, -208.995, 0, 0, 0, 0, 0, 0, -145.611, -0.0641479, 79.7262, 0, 0, 0, 0, 0, 0, 338.837, -0.0641174, 82.7035, 0, 0, 0, 0, 0, 0, 334.571, 0.165833, -206.07, 0, 0, 0, 0, 0, 0, -141.421, 0.165741, -208.995),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
 [node name="Globals" type="Node"]
 script = ExtResource("1_61i6j")
+astroid_scene = ExtResource("2_ud3gb")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 90.6505, 101.778, -69.0317)
@@ -87,3 +96,15 @@ offset_right = 52.0
 offset_bottom = 107.0
 text = "Next level"
 script = ExtResource("2_exfd0")
+
+[node name="AstroidTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="SpawnPath" type="Path3D" parent="."]
+curve = SubResource("Curve3D_gbmkl")
+
+[node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
+transform = Transform3D(-0.999888, -1.15525e-05, 0.0145106, 0, 0.999982, 0.000796139, -0.0145107, 0.00079605, -0.999883, -141.421, 0.165741, -208.995)
+
+[connection signal="timeout" from="AstroidTimer" to="." method="_on_astroid_timer_timeout"]
