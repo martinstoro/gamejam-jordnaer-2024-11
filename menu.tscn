@@ -183,6 +183,13 @@ size_flags_vertical = 8
 columns = 5
 metadata/_edit_group_ = true
 
+[node name="Button0" type="Button" parent="LevelSelect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Level 0
+"
+script = ExtResource("3_chc5p")
+
 [node name="Button" type="Button" parent="LevelSelect/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32

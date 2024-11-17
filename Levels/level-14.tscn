@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmlnltfp7cae"]
+[gd_scene load_steps=8 format=3 uid="uid://blaixfrg86vr3"]
 
 [ext_resource type="Script" path="res://Levels/level_14.gd" id="1_dojsr"]
 [ext_resource type="PackedScene" uid="uid://ca7vc7rpbqikh" path="res://Player.tscn" id="2_moe4o"]
@@ -21,6 +21,7 @@ material = SubResource("StandardMaterial3D_tl2bd")
 
 [node name="Root2" type="Node3D"]
 script = ExtResource("1_dojsr")
+level = 14
 ASTROID_SPAWN_TIME = 0.001
 
 [node name="Player" parent="." instance=ExtResource("2_moe4o")]

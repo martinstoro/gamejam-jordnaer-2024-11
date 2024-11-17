@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://g2ebr61q4bk1"]
+[gd_scene load_steps=10 format=3 uid="uid://b5m64ysmu0tp5"]
 
 [ext_resource type="Script" path="res://Levels/level.gd" id="1_v1uqd"]
 [ext_resource type="PackedScene" uid="uid://ca7vc7rpbqikh" path="res://Player.tscn" id="2_2tcbg"]
@@ -24,6 +24,7 @@ material = SubResource("StandardMaterial3D_tl2bd")
 [node name="Root2" type="Node3D"]
 script = ExtResource("1_v1uqd")
 HAS_ASTROIDS = false
+level = 10
 
 [node name="Player" parent="." instance=ExtResource("2_2tcbg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -33.0047, 0, -149.454)

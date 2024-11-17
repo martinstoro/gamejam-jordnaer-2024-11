@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dm6e1e508tpju"]
+[gd_scene load_steps=9 format=3 uid="uid://ci58rigfeef1x"]
 
 [ext_resource type="Script" path="res://Levels/level.gd" id="1_4vge4"]
 [ext_resource type="PackedScene" uid="uid://ca7vc7rpbqikh" path="res://Player.tscn" id="2_v8r6b"]
@@ -23,6 +23,7 @@ material = SubResource("StandardMaterial3D_tl2bd")
 [node name="Root2" type="Node3D"]
 script = ExtResource("1_4vge4")
 ASTROID_SPAWN_TIME = 0.1
+level = 3
 
 [node name="Player" parent="." instance=ExtResource("2_v8r6b")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -68.9651, 0, -71.239)
@@ -32,7 +33,10 @@ transform = Transform3D(10.515, 0, 0, 0, 10.515, 0, 0, 0, 10.515, 204.722, 0, -6
 IS_DANGER = false
 
 [node name="Planet" parent="." instance=ExtResource("3_3ey88")]
-transform = Transform3D(7.515, 0, 0, 0, 7.515, 0, 0, 0, 7.515, 83.2299, 0, -68.8057)
+transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, 81.0443, 0, -211.977)
+
+[node name="Planet2" parent="." instance=ExtResource("3_3ey88")]
+transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, 75.5062, 0, 74.5956)
 
 [node name="Ground" type="MeshInstance3D" parent="."]
 transform = Transform3D(10000, 0, 0, 0, 10000, 0, 0, 0, 10000, 48.0107, -9.99919, -71.9613)

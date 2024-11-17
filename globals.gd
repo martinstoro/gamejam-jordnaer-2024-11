@@ -47,11 +47,12 @@ func _process(delta):
 	
 	if !music_audio.playing:
 		music_audio.play()
-		
+
+func set_level(selected: int):
+	level = selected
+
 func next():
-	level += 1
-	print(level)
-	get_tree().change_scene_to_file('res://Levels/level-' + str(level) + '.tscn')
+	get_tree().change_scene_to_file('res://Levels/level-' + str(level + 1) + '.tscn')
 	destroyAstroids()
 
 func off_screen():
