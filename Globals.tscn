@@ -1,11 +1,12 @@
-[gd_scene load_steps=39 format=3 uid="uid://dkxkbla3827vf"]
+[gd_scene load_steps=40 format=3 uid="uid://dkxkbla3827vf"]
 
 [ext_resource type="Script" path="res://globals.gd" id="1_61i6j"]
 [ext_resource type="Script" path="res://restart_game.gd" id="1_u1ad4"]
 [ext_resource type="Script" path="res://next_level_button.gd" id="2_exfd0"]
-[ext_resource type="PackedScene" uid="uid://cvh1maum3hk8" path="res://Astroid.tscn" id="2_ud3gb"]
+[ext_resource type="PackedScene" uid="uid://byl66at1yteee" path="res://Astroid.tscn" id="2_ud3gb"]
 [ext_resource type="Texture2D" uid="uid://dnnfthah2vpv7" path="res://assets/star.png" id="3_0lcg5"]
 [ext_resource type="AudioStream" uid="uid://fymmqhhnkbxg" path="res://assets/music/c-long.wav" id="4_3gexv"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="4_rjtsy"]
 [ext_resource type="AudioStream" uid="uid://88vxs5ctw62" path="res://assets/music/c-short.wav" id="5_fohwe"]
 [ext_resource type="AudioStream" uid="uid://egjjstoi122o" path="res://assets/music/d-long.wav" id="6_hhkom"]
 [ext_resource type="AudioStream" uid="uid://dw6yugm0fxm01" path="res://assets/music/e-long.wav" id="7_coke3"]
@@ -119,16 +120,6 @@ environment = SubResource("Environment_4jkfr")
 transform = Transform3D(0.182468, -0.636054, 0.74976, 0.976876, 0.0308472, -0.211572, 0.111443, 0.771028, 0.626975, 0, 9.7668, 0)
 shadow_enabled = true
 
-[node name="Button" type="Button" parent="."]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -86.0
-offset_bottom = 31.0
-grow_horizontal = 0
-text = "Restart (r)"
-script = ExtResource("1_u1ad4")
-
 [node name="WinLoseUI" type="CenterContainer" parent="."]
 visible = false
 anchors_preset = 15
@@ -170,6 +161,22 @@ offset_right = 52.0
 offset_bottom = 107.0
 text = "Next level"
 script = ExtResource("2_exfd0")
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -86.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "Restart (r)"
+script = ExtResource("1_u1ad4")
+
+[node name="MainMenu" type="Button" parent="."]
+offset_right = 86.0
+offset_bottom = 31.0
+text = "Menu"
+script = ExtResource("4_rjtsy")
 
 [node name="AstroidTimer" type="Timer" parent="."]
 wait_time = 0.5

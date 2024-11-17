@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=3 uid="uid://bm1pjqye5fp2j"]
+
+[ext_resource type="Script" path="res://Levels/level.gd" id="1_ltx7m"]
+[ext_resource type="PackedScene" uid="uid://ca7vc7rpbqikh" path="res://Player.tscn" id="2_a8cbi"]
+[ext_resource type="PackedScene" uid="uid://crri06jkingmg" path="res://Planet.tscn" id="3_ihpqi"]
+[ext_resource type="PackedScene" uid="uid://bk7w5hutilkjx" path="res://resusabbles/StaticAstroid/StaticAstroid.tscn" id="4_tx0o8"]
+
+[sub_resource type="Gradient" id="Gradient_gbnwk"]
+offsets = PackedFloat32Array(0.158683, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_k0y17"]
+frequency = 0.0417
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gctbd"]
+color_ramp = SubResource("Gradient_gbnwk")
+noise = SubResource("FastNoiseLite_k0y17")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tl2bd"]
+albedo_texture = SubResource("NoiseTexture2D_gctbd")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0ilb1"]
+material = SubResource("StandardMaterial3D_tl2bd")
+
+[node name="Root2" type="Node3D"]
+script = ExtResource("1_ltx7m")
+HAS_ASTROIDS = false
+
+[node name="Player" parent="." instance=ExtResource("2_a8cbi")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -68.9651, 0, -71.239)
+
+[node name="Planet4" parent="." instance=ExtResource("3_ihpqi")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 169.538, 0, -161.683)
+IS_DANGER = false
+
+[node name="Planet5" parent="." instance=ExtResource("3_ihpqi")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 122.571, 0, -123.133)
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(10000, 0, 0, 0, 10000, 0, 0, 0, 10000, 48.0107, -9.99919, -71.9613)
+mesh = SubResource("PlaneMesh_0ilb1")
+
+[node name="StaticAstroid" parent="." instance=ExtResource("4_tx0o8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 168.021, 0, -82.7266)
+
+[node name="StaticAstroid2" parent="." instance=ExtResource("4_tx0o8")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 175.554, 0, -76.6039)
+
+[node name="StaticAstroid3" parent="." instance=ExtResource("4_tx0o8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176.093, 0, -68.2617)
+
+[node name="StaticAstroid4" parent="." instance=ExtResource("4_tx0o8")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 183.626, 0, -62.1391)
+
+[node name="StaticAstroid5" parent="." instance=ExtResource("4_tx0o8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 193.92, 0, -60.394)
+
+[node name="StaticAstroid6" parent="." instance=ExtResource("4_tx0o8")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 201.453, 0, -54.2714)
+
+[node name="StaticAstroid7" parent="." instance=ExtResource("4_tx0o8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192.774, 0, -50.2493)
+
+[node name="StaticAstroid8" parent="." instance=ExtResource("4_tx0o8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200.307, 0, -44.1267)
+
+[node name="StaticAstroid9" parent="." instance=ExtResource("4_tx0o8")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 200.846, 0, -35.7845)
+
+[node name="StaticAstroid10" parent="." instance=ExtResource("4_tx0o8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 208.379, 0, -29.6618)
+
+[node name="StaticAstroid11" parent="." instance=ExtResource("4_tx0o8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 218.673, 0, -27.9167)
+
+[node name="StaticAstroid12" parent="." instance=ExtResource("4_tx0o8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 226.206, 0, -21.7941)
+
+[node name="StaticAstroid13" parent="." instance=ExtResource("4_tx0o8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 220.516, 0, -50.3407)
+
+[node name="StaticAstroid14" parent="." instance=ExtResource("4_tx0o8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 231.671, 0, -42.0682)
+
+[node name="StaticAstroid15" parent="." instance=ExtResource("4_tx0o8")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 232.21, 0, -33.726)
+
+[node name="StaticAstroid16" parent="." instance=ExtResource("4_tx0o8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 239.743, 0, -27.6033)
+
+[node name="StaticAstroid17" parent="." instance=ExtResource("4_tx0o8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250.037, 0, -25.8582)
+
+[node name="StaticAstroid18" parent="." instance=ExtResource("4_tx0o8")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 257.57, 0, -19.7356)

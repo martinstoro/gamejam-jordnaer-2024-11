@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://crri06jkingmg"]
 
 [ext_resource type="Script" path="res://scripts/gravity_sphere.gd" id="1_hb6wg"]
-[ext_resource type="PackedScene" path="res://Explosion.tscn" id="2_jevxy"]
+[ext_resource type="PackedScene" uid="uid://bkb08kejt34ex" path="res://Explosion.tscn" id="2_jevxy"]
 [ext_resource type="Texture2D" uid="uid://hucuhsh7nd6m" path="res://assets/earth albedo.jpg" id="2_y4a4w"]
 [ext_resource type="Script" path="res://earth.gd" id="3_h43pa"]
 
