@@ -7,14 +7,25 @@ extends CharacterBody3D
 @onready var explosion: Node3D = $Explosion
 @onready var explosionAudio: AudioStreamPlayer = $AsteroidExplosion
 
+var rotationSpeed = 0.01
+var rotationVelocityX
+var rotationVelocityY
+var rotationVelocityZ
+
 func initialize(start_position, player_position):
 	look_at_from_position(start_position, player_position, Vector3.UP)
 	rotate_y(randf_range(-PI / 4, PI / 4))
 	var random_speed = randi_range(0, 100)
 	velocity = Vector3.FORWARD * random_speed
 	velocity = velocity.rotated(Vector3.UP, rotation.y)
+	rotationVelocityX = randf() * rotationSpeed
+	rotationVelocityY = randf() * rotationSpeed
+	rotationVelocityZ = randf() * rotationSpeed
 
 func _physics_process(delta: float) -> void:
+	rotation.x += rotationVelocityX
+	rotation.y += rotationVelocityY
+	rotation.z += rotationVelocityZ
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		if !explosionAudio.playing:
