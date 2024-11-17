@@ -12,6 +12,17 @@ extends Node
 @onready var earth_death_audio: AudioStreamPlayer = $EarthDeath
 @onready var player_off_screen_audio: AudioStreamPlayer = $PlayerOffScreen
 
+func _ready() -> void:
+	toggle_sound_effects(true)
+
+func toggle_sound_effects(mute: bool):
+	var bus_booster = AudioServer.get_bus_index("Boosters")
+	var bus_explosions = AudioServer.get_bus_index("Explosions")
+	var bus_voices = AudioServer.get_bus_index("Voices")
+	AudioServer.set_bus_mute(bus_booster, mute)
+	AudioServer.set_bus_mute(bus_explosions, mute)
+	AudioServer.set_bus_mute(bus_voices, mute)
+
 func _on_astroid_timer_timeout() -> void:
 	var scene = get_tree().current_scene
 	if scene != null:
@@ -28,8 +39,10 @@ func _process(delta):
 	if Input.is_key_pressed(KEY_R):
 		get_tree().reload_current_scene()
 		reset()
+		Globals.toggle_sound_effects(false)
 	if Input.is_key_pressed(KEY_Z):
 		get_tree().change_scene_to_file("res://Main3D.tscn")
+		Globals.toggle_sound_effects(false)
 		# REMEMBER TO REMOVE BEFORE 16:00!!!
 	
 	if !music_audio.playing:

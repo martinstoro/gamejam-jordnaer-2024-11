@@ -7,6 +7,7 @@ func _ready() -> void:
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_file("res://Levels/level-0.tscn")
 	Globals.reset()
+	Globals.toggle_sound_effects(false)
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
