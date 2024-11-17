@@ -40,6 +40,7 @@ func next():
 	level += 1
 	print(level)
 	get_tree().change_scene_to_file('res://Levels/level-' + str(level) + '.tscn')
+	destroyAstroids()
 	
 
 func off_screen():
@@ -63,4 +64,10 @@ func win():
 	win_lose_label.text = "You killed 8.2 billion people!"
 
 func reset():
+	destroyAstroids()
 	win_lose_ui.visible = false
+
+func destroyAstroids():
+	var astroids = get_tree().get_nodes_in_group("astroids")
+	for astroid in astroids:
+		astroid.queue_free()

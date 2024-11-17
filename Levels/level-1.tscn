@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dfjtwvw3b8x8s"]
+[gd_scene load_steps=10 format=3 uid="uid://bjoid7n2rto7s"]
 
-[ext_resource type="PackedScene" uid="uid://ca7vc7rpbqikh" path="res://Player.tscn" id="1_ifff7"]
-[ext_resource type="Script" path="res://scripts/main_3d.gd" id="1_wao54"]
-[ext_resource type="PackedScene" uid="uid://crri06jkingmg" path="res://Planet.tscn" id="2_q31yk"]
-[ext_resource type="PackedScene" uid="uid://cvh1maum3hk8" path="res://Astroid.tscn" id="3_0wttf"]
+[ext_resource type="Script" path="res://scripts/main_3d.gd" id="1_5weki"]
+[ext_resource type="PackedScene" uid="uid://cvh1maum3hk8" path="res://Astroid.tscn" id="2_l48a3"]
+[ext_resource type="PackedScene" uid="uid://ca7vc7rpbqikh" path="res://Player.tscn" id="3_552ni"]
+[ext_resource type="PackedScene" uid="uid://crri06jkingmg" path="res://Planet.tscn" id="4_knbus"]
 
 [sub_resource type="Gradient" id="Gradient_gbnwk"]
 offsets = PackedFloat32Array(0.158683, 1)
@@ -22,23 +22,23 @@ albedo_texture = SubResource("NoiseTexture2D_gctbd")
 material = SubResource("StandardMaterial3D_tl2bd")
 
 [node name="Root" type="Node3D"]
-script = ExtResource("1_wao54")
-astroid_scene = ExtResource("3_0wttf")
+script = ExtResource("1_5weki")
+astroid_scene = ExtResource("2_l48a3")
 
-[node name="Player" parent="." instance=ExtResource("1_ifff7")]
+[node name="Player" parent="." instance=ExtResource("3_552ni")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -68.9651, 0, -71.239)
 
-[node name="Planet" parent="." instance=ExtResource("2_q31yk")]
+[node name="Planet" parent="." instance=ExtResource("4_knbus")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
 
-[node name="Planet2" parent="." instance=ExtResource("2_q31yk")]
+[node name="Planet2" parent="." instance=ExtResource("4_knbus")]
 transform = Transform3D(3.375, 0, 0, 0, 3.375, 0, 0, 0, 3.375, -10, 0, -10)
 
-[node name="Planet3" parent="." instance=ExtResource("2_q31yk")]
+[node name="Planet3" parent="." instance=ExtResource("4_knbus")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 86.9511, 0, -73.3281)
 
-[node name="Planet4" parent="." instance=ExtResource("2_q31yk")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -43.5457, 0, -69.5293)
+[node name="Planet4" parent="." instance=ExtResource("4_knbus")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 204.722, 0, -69.5293)
 IS_DANGER = false
 
 [node name="Ground" type="MeshInstance3D" parent="."]

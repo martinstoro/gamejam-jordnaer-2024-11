@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://du5387n5fkfy5"]
+[gd_scene load_steps=10 format=3 uid="uid://farvdq3ld7g4"]
 
 [ext_resource type="Script" path="res://scripts/main_3d.gd" id="1_ihci8"]
 [ext_resource type="PackedScene" uid="uid://cvh1maum3hk8" path="res://Astroid.tscn" id="2_mtmlx"]
@@ -21,7 +21,7 @@ albedo_texture = SubResource("NoiseTexture2D_gctbd")
 [sub_resource type="PlaneMesh" id="PlaneMesh_0ilb1"]
 material = SubResource("StandardMaterial3D_tl2bd")
 
-[node name="Root" type="Node3D"]
+[node name="Root2" type="Node3D"]
 script = ExtResource("1_ihci8")
 astroid_scene = ExtResource("2_mtmlx")
 
