@@ -7,7 +7,6 @@ extends CharacterBody3D
 @onready var ship_mesh: Node3D = $ShipMesh
 @onready var MainBoosterAudio: AudioStreamPlayer = $MainBooster
 @onready var RotationBoosterAudio: AudioStreamPlayer = $RotationBooster
-@onready var PlayerExplosionAudio: AudioStreamPlayer = $PlayerExplosion
 @onready var restart_button: Button = $"../WinLoseUI/Container/RestartButton"
 
 const MASS = 1.0
@@ -74,7 +73,6 @@ func die():
 	right_air_thruster.disable_airthruster()
 	RotationBoosterAudio.stop()
 	left_air_thruster.disable_airthruster()
-	PlayerExplosionAudio.play()
 	explosion.explode()
 
 func lose():
