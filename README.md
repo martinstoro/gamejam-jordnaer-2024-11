@@ -14,7 +14,7 @@ A gamejam submission for the "Jordnær" theme.
 - [x] Zoom inn
 - [x] Navn - Forslag: "Down with Earth!"
 - [x] Vis navn på main menu
-- [ ] Tweaking - fart, rotatsjon, gravitasjon, map size etc
+- [x] Tweaking - fart, rotatsjon, gravitasjon, map size etc
 - [x] Load animasjoner etc før start
 - [x] Lyder
   - [x] Booster
@@ -30,18 +30,19 @@ A gamejam submission for the "Jordnær" theme.
 - [x] Trail animasjon
 - [x] Astroider
 - [x] Musikk
-- [ ] Spillerdesign
+- [x] Spillerdesign
 - [x] Astroider dør utenfor kanten
 - [x] Død langs kanten / astroidebelte langs kanten
 - [x] Variabel meteorstorm
 - [x] Reset meteorstorm
 - [x] Lyd av folk som dør
 - [x] Hindringer / astroidebelter
-- [ ] Flere levels
+- [x] Flere levels
+- [ ] Final level
 
 ### If we have time
-- [ ] Back to main menu button
-- [ ] Level select menu item
+- [x] Back to main menu button
+- [x] Level select menu item
 - [ ] Planetvariasjon
 - [x] Bakgrunn / stjerner
 - [ ] Endre bakgrunn for hver level
