@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=3 uid="uid://du5387n5fkfy5"]
+
+[ext_resource type="Script" path="res://scripts/main_3d.gd" id="1_ihci8"]
+[ext_resource type="PackedScene" uid="uid://cvh1maum3hk8" path="res://Astroid.tscn" id="2_mtmlx"]
+[ext_resource type="PackedScene" uid="uid://ca7vc7rpbqikh" path="res://Player.tscn" id="3_072ak"]
+[ext_resource type="PackedScene" uid="uid://crri06jkingmg" path="res://Planet.tscn" id="4_4jk6s"]
+
+[sub_resource type="Gradient" id="Gradient_gbnwk"]
+offsets = PackedFloat32Array(0.158683, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_k0y17"]
+frequency = 0.0417
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gctbd"]
+color_ramp = SubResource("Gradient_gbnwk")
+noise = SubResource("FastNoiseLite_k0y17")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tl2bd"]
+albedo_texture = SubResource("NoiseTexture2D_gctbd")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0ilb1"]
+material = SubResource("StandardMaterial3D_tl2bd")
+
+[node name="Root" type="Node3D"]
+script = ExtResource("1_ihci8")
+astroid_scene = ExtResource("2_mtmlx")
+
+[node name="Player" parent="." instance=ExtResource("3_072ak")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -68.9651, 0, -71.239)
+
+[node name="Planet" parent="." instance=ExtResource("4_4jk6s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+
+[node name="Planet2" parent="." instance=ExtResource("4_4jk6s")]
+transform = Transform3D(3.375, 0, 0, 0, 3.375, 0, 0, 0, 3.375, -10, 0, -10)
+
+[node name="Planet3" parent="." instance=ExtResource("4_4jk6s")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 86.9511, 0, -73.3281)
+
+[node name="Planet4" parent="." instance=ExtResource("4_4jk6s")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 204.722, 0, -69.5293)
+IS_DANGER = false
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(10000, 0, 0, 0, 10000, 0, 0, 0, 10000, 0.755829, -9.99919, -0.0176315)
+mesh = SubResource("PlaneMesh_0ilb1")

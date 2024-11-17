@@ -1,6 +1,7 @@
 extends Node
 
 @export var astroid_scene: PackedScene
+@export var level: int
 
 @onready var restart_button: Button = $WinLoseUI/Container/RestartButton
 @onready var next_level_button: Button = $WinLoseUI/Container/NextLevelButton
@@ -8,6 +9,9 @@ extends Node
 @onready var win_lose_label: Label = $WinLoseUI/Container/WinLoseLabel
 @onready var music_audio: AudioStreamPlayer = $Music
 @onready var player_explosion_audio: AudioStreamPlayer = $PlayerExplosion
+
+
+
 
 func _on_astroid_timer_timeout() -> void:
 	var scene = get_tree().current_scene
@@ -31,7 +35,12 @@ func _process(delta):
 	
 	if !music_audio.playing:
 		music_audio.play()
-
+		
+func next():
+	level += 1
+	print(level)
+	get_tree().change_scene_to_file('res://Levels/level-' + str(level) + '.tscn')
+	
 func lose():
 	player_explosion_audio.play()
 	win_lose_ui.visible = true
