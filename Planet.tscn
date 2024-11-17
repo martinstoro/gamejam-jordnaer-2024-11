@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://crri06jkingmg"]
+[gd_scene load_steps=12 format=3 uid="uid://crri06jkingmg"]
 
 [ext_resource type="Script" path="res://scripts/gravity_sphere.gd" id="1_hb6wg"]
-[ext_resource type="PackedScene" uid="uid://bkb08kejt34ex" path="res://Explosion.tscn" id="2_jevxy"]
+[ext_resource type="PackedScene" path="res://Explosion.tscn" id="2_jevxy"]
+[ext_resource type="Texture2D" uid="uid://hucuhsh7nd6m" path="res://assets/earth albedo.jpg" id="2_y4a4w"]
+[ext_resource type="Script" path="res://earth.gd" id="3_h43pa"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6nhk"]
 albedo_color = Color(1, 0.233333, 0, 1)
@@ -9,11 +11,11 @@ albedo_color = Color(1, 0.233333, 0, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_2taig"]
 material = SubResource("StandardMaterial3D_w6nhk")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvnv0"]
-albedo_color = Color(0, 0.383333, 1, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4fk5f"]
+albedo_texture = ExtResource("2_y4a4w")
 
 [sub_resource type="SphereMesh" id="SphereMesh_x0auw"]
-material = SubResource("StandardMaterial3D_kvnv0")
+material = SubResource("StandardMaterial3D_4fk5f")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8uugd"]
 
@@ -43,6 +45,7 @@ mesh = SubResource("SphereMesh_2taig")
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 visible = false
 mesh = SubResource("SphereMesh_x0auw")
+script = ExtResource("3_h43pa")
 
 [node name="Hitbox" type="CollisionShape3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
