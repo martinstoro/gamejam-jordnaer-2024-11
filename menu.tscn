@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://sgkqe5oajc3t"]
+[gd_scene load_steps=14 format=3 uid="uid://sgkqe5oajc3t"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_losu8"]
 [ext_resource type="Texture2D" uid="uid://dnnfthah2vpv7" path="res://assets/star.png" id="2_edjj6"]
+[ext_resource type="Script" path="res://scripts/select_level.gd" id="3_chc5p"]
 [ext_resource type="PackedScene" uid="uid://crri06jkingmg" path="res://Planet.tscn" id="3_g0gaf"]
 [ext_resource type="PackedScene" uid="uid://ca7vc7rpbqikh" path="res://Player.tscn" id="3_lc0l7"]
-[ext_resource type="PackedScene" path="res://Explosion.tscn" id="5_u06ni"]
+[ext_resource type="PackedScene" uid="uid://bkb08kejt34ex" path="res://Explosion.tscn" id="5_u06ni"]
 [ext_resource type="Texture2D" uid="uid://62yvt88bs87v" path="res://icon.svg" id="7_b5yql"]
 [ext_resource type="Script" path="res://loading_icon.gd" id="8_vjscg"]
 
@@ -131,6 +132,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Start"
 
+[node name="LevelSelect" type="Button" parent="StartMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Select level"
+
 [node name="Credits" type="Button" parent="StartMenu/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
@@ -140,6 +146,90 @@ text = "Credits"
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Quit"
+
+[node name="LevelSelect" type="Control" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.5
+offset_top = -75.0
+offset_right = 295.5
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Back" type="Button" parent="LevelSelect"]
+offset_left = 254.5
+offset_top = 157.0
+offset_right = 336.5
+offset_bottom = 210.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+text = "Back"
+
+[node name="VBoxContainer" type="Control" parent="LevelSelect"]
+layout_mode = 2
+anchors_preset = 0
+offset_top = 43.0
+offset_right = 591.0
+offset_bottom = 96.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+metadata/_edit_group_ = true
+
+[node name="Button" type="Button" parent="LevelSelect/VBoxContainer"]
+layout_mode = 2
+offset_right = 115.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 32
+text = "Level 1"
+script = ExtResource("3_chc5p")
+level = 1
+
+[node name="Button2" type="Button" parent="LevelSelect/VBoxContainer"]
+layout_mode = 2
+offset_left = 119.0
+offset_right = 234.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 32
+text = "Level 2"
+script = ExtResource("3_chc5p")
+level = 2
+
+[node name="Button3" type="Button" parent="LevelSelect/VBoxContainer"]
+layout_mode = 2
+offset_left = 238.0
+offset_right = 353.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 32
+text = "Level 3"
+script = ExtResource("3_chc5p")
+level = 3
+
+[node name="Button4" type="Button" parent="LevelSelect/VBoxContainer"]
+layout_mode = 2
+offset_left = 357.0
+offset_right = 472.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 32
+text = "Level 4"
+script = ExtResource("3_chc5p")
+level = 4
+
+[node name="Button5" type="Button" parent="LevelSelect/VBoxContainer"]
+layout_mode = 2
+offset_left = 476.0
+offset_right = 591.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 32
+text = "Level 5"
+script = ExtResource("3_chc5p")
+level = 4
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -171,5 +261,7 @@ script = ExtResource("8_vjscg")
 
 [connection signal="pressed" from="CreditsMenu/VBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="StartMenu/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="StartMenu/VBoxContainer/LevelSelect" to="." method="_on_level_select_pressed"]
 [connection signal="pressed" from="StartMenu/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="StartMenu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="LevelSelect/Back" to="." method="_on_back_pressed"]

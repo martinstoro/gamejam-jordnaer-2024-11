@@ -53,7 +53,6 @@ func next():
 	print(level)
 	get_tree().change_scene_to_file('res://Levels/level-' + str(level) + '.tscn')
 	destroyAstroids()
-	
 
 func off_screen():
 	player_off_screen_audio.play()
