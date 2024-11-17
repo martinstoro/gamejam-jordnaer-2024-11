@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ca7vc7rpbqikh" path="res://Player.tscn" id="1_ifff7"]
 [ext_resource type="Script" path="res://scripts/main_3d.gd" id="1_wao54"]
 [ext_resource type="PackedScene" uid="uid://crri06jkingmg" path="res://Planet.tscn" id="2_q31yk"]
-[ext_resource type="PackedScene" uid="uid://byl66at1yteee" path="res://Astroid.tscn" id="3_0wttf"]
+[ext_resource type="PackedScene" uid="uid://cvh1maum3hk8" path="res://Astroid.tscn" id="3_0wttf"]
 
 [sub_resource type="Gradient" id="Gradient_gbnwk"]
 offsets = PackedFloat32Array(0.158683, 1)

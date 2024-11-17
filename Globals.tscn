@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c5kv7ogakq0hy"]
+[gd_scene load_steps=39 format=3 uid="uid://dkxkbla3827vf"]
 
 [ext_resource type="Script" path="res://globals.gd" id="1_61i6j"]
 [ext_resource type="Script" path="res://restart_game.gd" id="1_u1ad4"]
@@ -15,6 +15,16 @@
 [ext_resource type="AudioStream" uid="uid://gqjdruud5uyl" path="res://assets/music/g-short.wav" id="11_3fb35"]
 [ext_resource type="AudioStream" uid="uid://djpnkk0j6h8ux" path="res://assets/music/a-long.wav" id="12_7sqli"]
 [ext_resource type="AudioStream" uid="uid://ccc3uyragxylg" path="res://assets/sounds/explosion-big.wav" id="13_uvewj"]
+[ext_resource type="AudioStream" uid="uid://drl4cwra02xoq" path="res://assets/sounds/earth-death-1.wav" id="16_jgqk3"]
+[ext_resource type="AudioStream" uid="uid://qd4vpo8o11es" path="res://assets/sounds/earth-death-2.wav" id="17_bxkde"]
+[ext_resource type="AudioStream" uid="uid://bipq7l7t65rrl" path="res://assets/sounds/earth-death-3.wav" id="18_5deey"]
+[ext_resource type="AudioStream" uid="uid://ceeqdpj6ms03g" path="res://assets/sounds/earth-death-4.wav" id="19_3xgai"]
+[ext_resource type="AudioStream" uid="uid://efu24ba1y2ar" path="res://assets/sounds/earth-death-5.wav" id="20_i2gfx"]
+[ext_resource type="AudioStream" uid="uid://c1o1qolwm20t7" path="res://assets/sounds/earth-death-6.wav" id="21_dou6o"]
+[ext_resource type="AudioStream" uid="uid://cypthpnjuhq7m" path="res://assets/sounds/player-death-1.wav" id="22_wrhmc"]
+[ext_resource type="AudioStream" uid="uid://bxqtrldld67g1" path="res://assets/sounds/player-death-2.wav" id="23_waae4"]
+[ext_resource type="AudioStream" uid="uid://b0bjh0c3at4f0" path="res://assets/sounds/player-death-3.wav" id="24_lx1y4"]
+[ext_resource type="AudioStream" uid="uid://bh1p78n8w4p44" path="res://assets/sounds/player-death-4.wav" id="25_ksqyr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kg8q8"]
 
@@ -75,6 +85,23 @@ gravity = Vector3(0, 0, 0)
 scale_min = 0.1
 scale_curve = SubResource("CurveTexture_u5hnk")
 color_ramp = SubResource("GradientTexture1D_7tal7")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_iq6m1"]
+random_pitch = 1.2
+streams_count = 6
+stream_0/stream = ExtResource("16_jgqk3")
+stream_1/stream = ExtResource("17_bxkde")
+stream_2/stream = ExtResource("18_5deey")
+stream_3/stream = ExtResource("19_3xgai")
+stream_4/stream = ExtResource("20_i2gfx")
+stream_5/stream = ExtResource("21_dou6o")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_np6f5"]
+streams_count = 4
+stream_0/stream = ExtResource("22_wrhmc")
+stream_1/stream = ExtResource("23_waae4")
+stream_2/stream = ExtResource("24_lx1y4")
+stream_3/stream = ExtResource("25_ksqyr")
 
 [node name="Globals" type="Node"]
 script = ExtResource("1_61i6j")
@@ -155,6 +182,7 @@ transform = Transform3D(-0.999888, -1.15525e-05, 0.0145106, 0, 0.999982, 0.00079
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_rgc7q")
+bus = &"Music"
 
 [node name="PlayerExplosion" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_uvewj")
@@ -167,5 +195,13 @@ amount = 256
 process_material = SubResource("ParticleProcessMaterial_scioe")
 texture = ExtResource("3_0lcg5")
 lifetime = 5.0
+
+[node name="EarthDeath" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_iq6m1")
+bus = &"Voices"
+
+[node name="PlayerOffScreen" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_np6f5")
+bus = &"Voices"
 
 [connection signal="timeout" from="AstroidTimer" to="." method="_on_astroid_timer_timeout"]
