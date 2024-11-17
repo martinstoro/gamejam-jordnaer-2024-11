@@ -32,6 +32,12 @@ func _process(delta):
 	if !music_audio.playing:
 		music_audio.play()
 
+func lost():
+	win_lose_ui.visible = true
+	restart_button.visible = true
+	next_level_button.visible = false
+	win_lose_label.text = "Drifted off into deep space..."
+
 func lose():
 	player_explosion_audio.play()
 	win_lose_ui.visible = true
