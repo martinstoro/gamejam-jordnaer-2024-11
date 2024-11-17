@@ -38,7 +38,7 @@ A gamejam submission for the "Jordnær" theme.
 - [x] Lyd av folk som dør
 - [x] Hindringer / astroidebelter
 - [x] Flere levels
-- [ ] Final level
+- [x] Final level
 
 ### If we have time
 - [x] Back to main menu button
