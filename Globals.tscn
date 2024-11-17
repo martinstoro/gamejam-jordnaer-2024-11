@@ -1,9 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://c5kv7ogakq0hy"]
+[gd_scene load_steps=20 format=3 uid="uid://dkxkbla3827vf"]
 
 [ext_resource type="Script" path="res://globals.gd" id="1_61i6j"]
 [ext_resource type="Script" path="res://restart_game.gd" id="1_u1ad4"]
 [ext_resource type="Script" path="res://next_level_button.gd" id="2_exfd0"]
 [ext_resource type="PackedScene" uid="uid://cvh1maum3hk8" path="res://Astroid.tscn" id="2_ud3gb"]
+[ext_resource type="AudioStream" uid="uid://fymmqhhnkbxg" path="res://assets/music/c-long.wav" id="4_3gexv"]
+[ext_resource type="AudioStream" uid="uid://88vxs5ctw62" path="res://assets/music/c-short.wav" id="5_fohwe"]
+[ext_resource type="AudioStream" uid="uid://egjjstoi122o" path="res://assets/music/d-long.wav" id="6_hhkom"]
+[ext_resource type="AudioStream" uid="uid://dw6yugm0fxm01" path="res://assets/music/e-long.wav" id="7_coke3"]
+[ext_resource type="AudioStream" uid="uid://csec7huubdg1o" path="res://assets/music/e-short.wav" id="8_bf1ka"]
+[ext_resource type="AudioStream" uid="uid://cj860wcprc55e" path="res://assets/music/f-long.wav" id="9_88wwp"]
+[ext_resource type="AudioStream" uid="uid://rhshswunt1jd" path="res://assets/music/g-long.wav" id="10_r41ob"]
+[ext_resource type="AudioStream" uid="uid://gqjdruud5uyl" path="res://assets/music/g-short.wav" id="11_3fb35"]
+[ext_resource type="AudioStream" uid="uid://djpnkk0j6h8ux" path="res://assets/music/a-long.wav" id="12_7sqli"]
+[ext_resource type="AudioStream" uid="uid://ccc3uyragxylg" path="res://assets/sounds/explosion-big.wav" id="13_uvewj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kg8q8"]
 
@@ -28,6 +38,17 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_rgc7q"]
+streams_count = 9
+stream_0/stream = ExtResource("4_3gexv")
+stream_1/stream = ExtResource("5_fohwe")
+stream_2/stream = ExtResource("6_hhkom")
+stream_3/stream = ExtResource("7_coke3")
+stream_4/stream = ExtResource("8_bf1ka")
+stream_5/stream = ExtResource("9_88wwp")
+stream_6/stream = ExtResource("10_r41ob")
+stream_7/stream = ExtResource("11_3fb35")
+stream_8/stream = ExtResource("12_7sqli")
 
 [node name="Globals" type="Node"]
 script = ExtResource("1_61i6j")
@@ -108,3 +129,11 @@ curve = SubResource("Curve3D_gbmkl")
 transform = Transform3D(-0.999888, -1.15525e-05, 0.0145106, 0, 0.999982, 0.000796139, -0.0145107, 0.00079605, -0.999883, -141.421, 0.165741, -208.995)
 
 [connection signal="timeout" from="AstroidTimer" to="." method="_on_astroid_timer_timeout"]
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_rgc7q")
+bus = &"Music"
+
+[node name="PlayerExplosion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_uvewj")
+volume_db = 7.0
+bus = &"Explosions"

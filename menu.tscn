@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dgjsyn8cdn0b"]
+[gd_scene load_steps=8 format=3 uid="uid://sgkqe5oajc3t"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_losu8"]
 [ext_resource type="Texture2D" uid="uid://dnnfthah2vpv7" path="res://assets/star.png" id="2_edjj6"]
@@ -122,7 +122,7 @@ size_flags_vertical = 4
 [node name="Start" type="Button" parent="StartMenu/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Start"
+text = "Start (Z)"
 
 [node name="Credits" type="Button" parent="StartMenu/VBoxContainer"]
 layout_mode = 2

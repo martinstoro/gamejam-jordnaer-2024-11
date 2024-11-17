@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cvh1maum3hk8"]
 
 [ext_resource type="Script" path="res://scripts/astroid.gd" id="1_hfft7"]
-[ext_resource type="PackedScene" path="res://Explosion.tscn" id="2_1dh4u"]
+[ext_resource type="PackedScene" uid="uid://bkb08kejt34ex" path="res://Explosion.tscn" id="2_1dh4u"]
 [ext_resource type="AudioStream" uid="uid://bxroy8rcph118" path="res://assets/sounds/explosion-small.wav" id="3_1dinx"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_52vss"]
@@ -53,3 +53,4 @@ shape = SubResource("SphereShape3D_64ksf")
 [node name="AsteroidExplosion" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_kujb6")
 volume_db = -10.0
+bus = &"Explosions"

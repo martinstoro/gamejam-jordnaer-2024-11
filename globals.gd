@@ -6,6 +6,8 @@ extends Node
 @onready var next_level_button: Button = $WinLoseUI/Container/NextLevelButton
 @onready var win_lose_ui: CenterContainer = $WinLoseUI
 @onready var win_lose_label: Label = $WinLoseUI/Container/WinLoseLabel
+@onready var music_audio: AudioStreamPlayer = $Music
+@onready var player_explosion_audio: AudioStreamPlayer = $PlayerExplosion
 
 func _on_astroid_timer_timeout() -> void:
 	var scene = get_tree().current_scene
@@ -20,20 +22,25 @@ func _on_astroid_timer_timeout() -> void:
 
 
 func _process(delta):
-	if Input.is_key_pressed(KEY_R): 
+	if Input.is_key_pressed(KEY_R):
 		get_tree().reload_current_scene()
 		reset()
-	if Input.is_key_pressed(KEY_Z): 
+	if Input.is_key_pressed(KEY_Z):
 		get_tree().change_scene_to_file("res://Main3D.tscn")
 		# REMEMBER TO REMOVE BEFORE 16:00!!!
+	
+	if !music_audio.playing:
+		music_audio.play()
 
 func lose():
+	player_explosion_audio.play()
 	win_lose_ui.visible = true
 	restart_button.visible = true
 	next_level_button.visible = false
 	win_lose_label.text = "You died"
 
 func win():
+	player_explosion_audio.play()
 	win_lose_ui.visible = true
 	restart_button.visible = false
 	next_level_button.visible = true

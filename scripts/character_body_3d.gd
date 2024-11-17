@@ -7,7 +7,7 @@ extends CharacterBody3D
 @onready var ship_mesh: Node3D = $ShipMesh
 @onready var MainBoosterAudio: AudioStreamPlayer = $MainBooster
 @onready var RotationBoosterAudio: AudioStreamPlayer = $RotationBooster
-@onready var PlayerExplosionAudio: AudioStreamPlayer = $PlayerExplosion
+
 
 const MASS = 1.0
 const ACCELLERATE_VEC = Vector3(0, 0, -20)
@@ -73,7 +73,6 @@ func die():
 	right_air_thruster.disable_airthruster()
 	RotationBoosterAudio.stop()
 	left_air_thruster.disable_airthruster()
-	PlayerExplosionAudio.play()
 	explosion.explode()
 
 func lose():
