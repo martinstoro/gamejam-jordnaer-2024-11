@@ -1,5 +1,7 @@
 # gamejam-jordnaer-2024-11
-A gamejam submission for the "Jordnær" theme. Play it here: https://itch.io/jam/bouvet-nord-game-jam-2024/rate/3115557
+A gamejam submission for the "Jordnær" theme.  
+Play it here: https://itch.io/jam/bouvet-nord-game-jam-2024/rate/3115557  
+or with touch controls for mobile here: https://martinstorodegard.itch.io/down-with-earth
 
 ## TODO
 
